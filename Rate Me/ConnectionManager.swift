@@ -12,12 +12,12 @@ import Foundation
 class ConnectionManager : NSObject, NSURLConnectionDataDelegate {
     
     var requestProcessor: IRequestProcessor!
-    var responseProcessor: ResponseProcessor!
+    var responseProcessor: IResponseProcessor!
     var delegate: ConnectionManagerProtol!
     
     var response: NSMutableData?
     
-    init(delegate: ConnectionManagerProtol, requestProcessor: IRequestProcessor,responseProcessor: ResponseProcessor) {
+    init(delegate: ConnectionManagerProtol, requestProcessor: IRequestProcessor,responseProcessor: IResponseProcessor) {
         self.delegate = delegate
         self.requestProcessor = requestProcessor
         self.responseProcessor = responseProcessor
@@ -27,6 +27,7 @@ class ConnectionManager : NSObject, NSURLConnectionDataDelegate {
         let request = requestProcessor.createRequest(data)
         var connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: true)!
         connection.start()
+        
     }
     
     func asynchonousRequest(data: RequestData) {
@@ -46,13 +47,19 @@ class ConnectionManager : NSObject, NSURLConnectionDataDelegate {
         return nil
     }
     
+    func connection(connection: NSURLConnection, didFailWithError error: NSError) {
+        println("error")
+    }
+    
     func connectionDidFinishLoading(connection: NSURLConnection) {
+        println("finished:")
         
         var error: NSErrorPointer=nil
         
         var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(self.response!, options: NSJSONReadingOptions.MutableContainers, error: error) as! NSDictionary
         
         
+        println("json:")
         println(json)
         
         //var responseData = self.responseProcessor.processResponse(json: NSDictionary())

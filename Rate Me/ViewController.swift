@@ -17,10 +17,10 @@ class ViewController: UIViewController, ConnectionManagerProtol {
         user.password = "123"
         user.name = "Test User12".stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
         user.rateValue = 2
-        var requestData =  RequestData(endpoint: "http://rate-server.appspot.com/blob/uploadUrl", method: "GET", contentType: "", processable: user)
+        var requestData =  RequestData(endpoint: "http://rate-server.appspot.com/rate/get", method: "GET", contentType: "", processable: user)
         
         
-        var connection = ConnectionManager(delegate: self, requestProcessor: UserRequestProcessor(), responseProcessor: ResponseProcessor())
+        var connection = ConnectionManager(delegate: self, requestProcessor: UserRequestProcessor(), responseProcessor: UserResponseProcessor())
         
         connection.synchonousRequest(requestData)
         

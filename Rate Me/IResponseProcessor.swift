@@ -8,10 +8,8 @@
 
 import Foundation
 
-class ResponseProcessor {
+protocol IResponseProcessor {
 
-    func processResponse(json jsonResult: NSDictionary) ->ResponseData {
-        return ResponseData()
-    }
+    func processResponse(json jsonResult: NSDictionary) ->ResponseData
     
 }
