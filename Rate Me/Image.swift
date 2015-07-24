@@ -13,4 +13,9 @@ class Image: Processable {
 
     var userid: String?
     var image: UIImage?
+    var imageUrl: String?
+    
+    func toString() {
+
+    }
 }

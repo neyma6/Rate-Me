@@ -22,4 +22,13 @@ class User : Processable {
     init(userId id: String) {
         self.id = id
     }
+    
+    func toString() {
+        println("id: \(id)")
+        println("password: \(password)")
+        println("name: \(name)")
+        println("imageUrl: \(imageUrl)" )
+        println("rateValue: \(rateValue)")
+        println("numberOfRates: \(numberOfRates)")
+    }
 }

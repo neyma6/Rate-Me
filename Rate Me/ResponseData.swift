@@ -15,4 +15,11 @@ class ResponseData {
     var error: String?
     var url: String?
     
+    func toString() {
+        println("status \(status)")
+        println("error \(error)")
+        println("url \(url)")
+        processable?.toString()
+    }
+    
 }

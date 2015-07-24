@@ -8,8 +8,23 @@
 
 import Foundation
 
-protocol IResponseProcessor {
+class IResponseProcessor {
 
-    func processResponse(json jsonResult: NSDictionary) ->ResponseData
+    func processResponse(json jsonResult: NSDictionary) ->ResponseData {
+        var response = ResponseData()
+        if let status = jsonResult.objectForKey("status") as? String {
+            response.status = status
+        }
+        
+        if let error = jsonResult.objectForKey("error") as? String {
+            response.error = error
+        }
+        
+        if let url = jsonResult.objectForKey("url") as? String {
+            response.url = url
+        }
+        
+        return response
+    }
     
 }

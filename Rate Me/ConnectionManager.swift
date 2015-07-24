@@ -59,11 +59,10 @@ class ConnectionManager : NSObject, NSURLConnectionDataDelegate {
         var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(self.response!, options: NSJSONReadingOptions.MutableContainers, error: error) as! NSDictionary
         
         
-        println("json:")
         println(json)
         
-        //var responseData = self.responseProcessor.processResponse(json: NSDictionary())
-        //delegate.responseReceived(responseData)
+        var responseData = self.responseProcessor.processResponse(json: json)
+        delegate.responseReceived(responseData)
     }
     
 }

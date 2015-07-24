@@ -17,7 +17,7 @@ class ViewController: UIViewController, ConnectionManagerProtol {
         user.password = "123"
         user.name = "Test User12".stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
         user.rateValue = 2
-        var requestData =  RequestData(endpoint: "http://rate-server.appspot.com/rate/get", method: "GET", contentType: "", processable: user)
+        var requestData =  RequestData(endpoint: "http://rate-server.appspot.com/user/get", method: "GET", contentType: "", processable: user)
         
         
         var connection = ConnectionManager(delegate: self, requestProcessor: UserRequestProcessor(), responseProcessor: UserResponseProcessor())
@@ -33,7 +33,7 @@ class ViewController: UIViewController, ConnectionManagerProtol {
     }
     
     func responseReceived(responseData: ResponseData) {
-    
+        responseData.toString()
     }
 
 
