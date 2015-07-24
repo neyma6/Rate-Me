@@ -14,14 +14,14 @@ class ImageSendRequestProcessor : IRequestProcessor {
     func createRequest(requestData: RequestData) ->NSMutableURLRequest {
         var imageObj = requestData.processable as! Image
         
-        var boundery = "------------------------------------Image Request"
+        var boundery = "------------------------------------Image_Request"
         var contentType = "multipart/form-data; boundary=\(boundery)"
-        var urlObj = NSURL(string: requestData.endpoint)
+        var urlObj = NSURL(string: requestData.domain + requestData.endpoint)
         var request = NSMutableURLRequest(URL: urlObj!)
         
         request.HTTPMethod = requestData.method
         request.addValue(contentType, forHTTPHeaderField: "Content-Type")
-        
+
         var data = NSMutableData()
         var imageData = UIImageJPEGRepresentation(imageObj.image!, 1)
         
@@ -38,6 +38,9 @@ class ImageSendRequestProcessor : IRequestProcessor {
         data.appendData(("\r\n--\(boundery)\r\n" as NSString).dataUsingEncoding(NSUTF8StringEncoding)!)
         
         request.HTTPBody = data
+        
+        println(request)
+        println()
         
         return request
     }

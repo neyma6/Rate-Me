@@ -15,16 +15,16 @@ class UserRequestProcessor : IRequestProcessor {
         if (requestData.processable != nil) {
             var user: User = requestData.processable as! User
             var params = createDictionary(user)
-            url = URIBuilder.buildURI(requestData.endpoint, dictionary: params)
+            url = URIBuilder.buildURI(requestData.domain, endpoint: requestData.endpoint, dictionary: params)
         } else {
-            url = URIBuilder.buildURI(requestData.endpoint, dictionary: Dictionary<String, String>())
+            url = URIBuilder.buildURI(requestData.domain, endpoint: requestData.endpoint, dictionary: Dictionary<String, String>())
         }
         
         NSLog(url)
         
         var urlObj = NSURL(string: url)
         var request = NSMutableURLRequest(URL: urlObj!)
-        request.HTTPMethod = requestData.method        
+        request.HTTPMethod = requestData.method
         
         return request
     }

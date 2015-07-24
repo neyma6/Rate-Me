@@ -14,8 +14,8 @@ class URIBuilder {
     static let AND = "&"
     static let EQUALS = "="
     
-    class func buildURI(endpoint: String, dictionary: Dictionary<String, String>) ->String {
-        var url = endpoint
+    class func buildURI(domain: String, endpoint: String, dictionary: Dictionary<String, String>) ->String {
+        var url = domain + endpoint
         
         if ((url.rangeOfString(QUESTION_MARK)) != nil) {
             url += AND

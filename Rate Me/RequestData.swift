@@ -11,20 +11,21 @@ import Foundation
 public class RequestData {
     
     var processable: Processable?
+    let domain: String!
     let endpoint: String!
     let method: String!
-    let contentType: String!
+    var contentType: String?
 
-    init(endpoint: String, method: String, contentType: String) {
+    init(domain: String, endpoint: String, method: String) {
+        self.domain = domain
         self.endpoint = endpoint
         self.method = method
-        self.contentType = contentType
     }
     
-    init(endpoint: String, method: String, contentType: String, processable: Processable) {
+    init(domain: String, endpoint: String, method: String, processable: Processable) {
+        self.domain = domain
         self.processable = processable
         self.endpoint = endpoint
         self.method = method
-        self.contentType = contentType
     }
 }

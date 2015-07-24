@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EB43199F1B62C94E00E3E5B3 /* ImageRequestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB43199E1B62C94E00E3E5B3 /* ImageRequestProcessor.swift */; };
+		EB4319A31B62DA2E00E3E5B3 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB4319A21B62DA2E00E3E5B3 /* test.jpg */; };
 		EB50075E1B60380800DB482B /* UserResponseProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB50075D1B60380800DB482B /* UserResponseProcessor.swift */; };
 		EBA3A7C01B5D7280005B865C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3A7BF1B5D7280005B865C /* AppDelegate.swift */; };
 		EBA3A7C21B5D7280005B865C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3A7C11B5D7280005B865C /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		EB43199E1B62C94E00E3E5B3 /* ImageRequestProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRequestProcessor.swift; sourceTree = "<group>"; };
+		EB4319A21B62DA2E00E3E5B3 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		EB50075D1B60380800DB482B /* UserResponseProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserResponseProcessor.swift; sourceTree = "<group>"; };
 		EBA3A7BA1B5D7280005B865C /* Rate Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rate Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA3A7BE1B5D7280005B865C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		EBA3A7BD1B5D7280005B865C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EB4319A21B62DA2E00E3E5B3 /* test.jpg */,
 				EBA3A7BE1B5D7280005B865C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -266,6 +269,7 @@
 				EBA3A7C51B5D7280005B865C /* Main.storyboard in Resources */,
 				EBA3A7CA1B5D7280005B865C /* LaunchScreen.xib in Resources */,
 				EBA3A7C71B5D7280005B865C /* Images.xcassets in Resources */,
+				EB4319A31B62DA2E00E3E5B3 /* test.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

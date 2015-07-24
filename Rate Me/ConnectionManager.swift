@@ -49,20 +49,34 @@ class ConnectionManager : NSObject, NSURLConnectionDataDelegate {
     
     func connection(connection: NSURLConnection, didFailWithError error: NSError) {
         println("error")
+        println(error)
     }
     
     func connectionDidFinishLoading(connection: NSURLConnection) {
-        println("finished:")
+        println("finish")
+        var error: NSError?
         
-        var error: NSErrorPointer=nil
+        if (self.response == nil) {
+            println("response is nil")
+        } else {
+            println("response is not nil")
+        }
         
-        var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(self.response!, options: NSJSONReadingOptions.MutableContainers, error: error) as! NSDictionary
+        //var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(self.response!, options: NSJSONReadingOptions.MutableContainers, error: &error) as! NSDictionary
+        
+        //println(json)
+        //var responseData = self.responseProcessor.processResponse(json: json)
+        //delegate.responseReceived(responseData)
         
         
-        println(json)
-        
-        var responseData = self.responseProcessor.processResponse(json: json)
-        delegate.responseReceived(responseData)
+        if let dict = NSJSONSerialization.JSONObjectWithData(self.response!, options: NSJSONReadingOptions.MutableContainers, error: &error) as? NSDictionary {
+            var responseData = self.responseProcessor.processResponse(json: dict)
+            delegate.responseReceived(responseData)
+        } else {
+            println("nil")
+            let resultString = NSString(data: self.response!, encoding: NSUTF8StringEncoding)
+            println("Flawed JSON String: \(resultString)")
+        }
     }
     
 }

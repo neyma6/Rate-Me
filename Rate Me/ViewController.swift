@@ -10,16 +10,13 @@ import UIKit
 
 class ViewController: UIViewController, ConnectionManagerProtol {
 
+    var counter: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var user = User(userId: "test_2@test.com")
-        user.password = "123"
-        user.name = "Test User12".stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
-        user.rateValue = 2
-        var requestData =  RequestData(endpoint: "http://rate-server.appspot.com/user/get", method: "GET", contentType: "", processable: user)
-        
-        
+        var requestData =  RequestData(domain:"http://rate-server.appspot.com", endpoint: "/blob/uploadUrl", method: "GET")
+
         var connection = ConnectionManager(delegate: self, requestProcessor: UserRequestProcessor(), responseProcessor: UserResponseProcessor())
         
         connection.synchonousRequest(requestData)
@@ -33,7 +30,22 @@ class ViewController: UIViewController, ConnectionManagerProtol {
     }
     
     func responseReceived(responseData: ResponseData) {
-        responseData.toString()
+        if (counter == 0) {
+            counter+=1
+            
+            var image = Image()
+            image.userid = "test_2@test.com"
+            image.image = UIImage(named: "test.jpg")!
+            
+            var requestData =  RequestData(domain:responseData.url!, endpoint: "", method: "POST", processable: image)
+            
+            var connection = ConnectionManager(delegate: self, requestProcessor: ImageSendRequestProcessor(), responseProcessor: IResponseProcessor())
+            
+            connection.synchonousRequest(requestData)
+        }
+        else if (counter == 1) {
+            responseData.toString()
+        }
     }
 
 
