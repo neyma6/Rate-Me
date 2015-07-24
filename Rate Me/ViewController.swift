@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, ConnectionManagerProtol {
+class ViewController: UIViewController {
 
     var counter: Int = 0
     
@@ -17,7 +17,7 @@ class ViewController: UIViewController, ConnectionManagerProtol {
         
         var requestData =  RequestData(domain:"http://rate-server.appspot.com", endpoint: "/blob/uploadUrl", method: "GET")
 
-        var connection = ConnectionManager(delegate: self, requestProcessor: UserRequestProcessor(), responseProcessor: UserResponseProcessor())
+        var connection = ConnectionManager(delegate: ImageEndpointHandler(), requestProcessor: UserRequestProcessor(), responseProcessor: UserResponseProcessor())
         
         connection.synchonousRequest(requestData)
         
@@ -27,25 +27,6 @@ class ViewController: UIViewController, ConnectionManagerProtol {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func responseReceived(responseData: ResponseData) {
-        if (counter == 0) {
-            counter+=1
-            
-            var image = Image()
-            image.userid = "test_2@test.com"
-            image.image = UIImage(named: "test.jpg")!
-            
-            var requestData =  RequestData(domain:responseData.url!, endpoint: "", method: "POST", processable: image)
-            
-            var connection = ConnectionManager(delegate: self, requestProcessor: ImageSendRequestProcessor(), responseProcessor: IResponseProcessor())
-            
-            connection.synchonousRequest(requestData)
-        }
-        else if (counter == 1) {
-            responseData.toString()
-        }
     }
 
 

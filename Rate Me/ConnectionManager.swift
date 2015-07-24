@@ -8,6 +8,12 @@
 
 import Foundation
 
+protocol ConnectionManagerProtol {
+    
+    func responseReceived(responseData: ResponseData)
+    func errorReceived(error: NSError?)
+    
+}
 
 class ConnectionManager : NSObject, NSURLConnectionDataDelegate {
     
@@ -48,19 +54,12 @@ class ConnectionManager : NSObject, NSURLConnectionDataDelegate {
     }
     
     func connection(connection: NSURLConnection, didFailWithError error: NSError) {
-        println("error")
-        println(error)
+        delegate.errorReceived(error)
     }
     
     func connectionDidFinishLoading(connection: NSURLConnection) {
         println("finish")
         var error: NSError?
-        
-        if (self.response == nil) {
-            println("response is nil")
-        } else {
-            println("response is not nil")
-        }
         
         //var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(self.response!, options: NSJSONReadingOptions.MutableContainers, error: &error) as! NSDictionary
         
