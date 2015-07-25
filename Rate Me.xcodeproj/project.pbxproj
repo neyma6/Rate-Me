@@ -98,6 +98,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB4A2C1D1B63AAF10076205E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB4A2C1E1B63AB790076205E /* ViewController */,
+				EB8DB9351B62F8D6008C4031 /* ResponseHandler */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		EB4A2C1E1B63AB790076205E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EBA3A7C11B5D7280005B865C /* ViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		EB8DB9351B62F8D6008C4031 /* ResponseHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,10 +151,10 @@
 		EBA3A7BC1B5D7280005B865C /* Rate Me */ = {
 			isa = PBXGroup;
 			children = (
+				EB4A2C1D1B63AAF10076205E /* View */,
 				EBA3A7E61B5D94D2005B865C /* Domain */,
 				EBA3A7DF1B5D72FB005B865C /* Http */,
 				EBA3A7BF1B5D7280005B865C /* AppDelegate.swift */,
-				EBA3A7C11B5D7280005B865C /* ViewController.swift */,
 				EBA3A7C31B5D7280005B865C /* Main.storyboard */,
 				EBA3A7C61B5D7280005B865C /* Images.xcassets */,
 				EBA3A7C81B5D7280005B865C /* LaunchScreen.xib */,
@@ -175,7 +192,6 @@
 		EBA3A7DF1B5D72FB005B865C /* Http */ = {
 			isa = PBXGroup;
 			children = (
-				EB8DB9351B62F8D6008C4031 /* ResponseHandler */,
 				EBB15E7E1B5EB73F0083D71C /* Impl */,
 				EBA3A7E01B5D7321005B865C /* ConnectionManager.swift */,
 				EBB15E731B5EA93C0083D71C /* IResponseProcessor.swift */,
