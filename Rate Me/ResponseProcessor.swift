@@ -8,7 +8,7 @@
 
 import Foundation
 
-class IResponseProcessor {
+class ResponseProcessor {
 
     func processResponse(json jsonResult: NSDictionary) ->ResponseData {
         var response = ResponseData()

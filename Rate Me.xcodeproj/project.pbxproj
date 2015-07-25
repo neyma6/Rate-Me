@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		EB43199F1B62C94E00E3E5B3 /* ImageRequestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB43199E1B62C94E00E3E5B3 /* ImageRequestProcessor.swift */; };
 		EB4319A31B62DA2E00E3E5B3 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB4319A21B62DA2E00E3E5B3 /* test.jpg */; };
+		EB4A2C201B63AF970076205E /* DownloadImageResponseProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A2C1F1B63AF970076205E /* DownloadImageResponseProcessor.swift */; };
+		EB4A2C221B63B21B0076205E /* NoRequestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A2C211B63B21B0076205E /* NoRequestProcessor.swift */; };
 		EB50075E1B60380800DB482B /* UserResponseProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB50075D1B60380800DB482B /* UserResponseProcessor.swift */; };
 		EB8DB9371B62F90B008C4031 /* ImageEndpointHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8DB9361B62F90B008C4031 /* ImageEndpointHandler.swift */; };
 		EB8DB9391B62FBAD008C4031 /* UserRegistrationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8DB9381B62FBAD008C4031 /* UserRegistrationHandler.swift */; };
@@ -28,7 +30,7 @@
 		EBA3A7E51B5D93DB005B865C /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3A7E41B5D93DB005B865C /* RequestData.swift */; };
 		EBA3A7EA1B5D952E005B865C /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3A7E91B5D952E005B865C /* ResponseData.swift */; };
 		EBB15E701B5EA3C60083D71C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB15E6F1B5EA3C60083D71C /* User.swift */; };
-		EBB15E741B5EA93C0083D71C /* IResponseProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB15E731B5EA93C0083D71C /* IResponseProcessor.swift */; };
+		EBB15E741B5EA93C0083D71C /* ResponseProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB15E731B5EA93C0083D71C /* ResponseProcessor.swift */; };
 		EBB15E761B5EAC780083D71C /* IRequestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB15E751B5EAC780083D71C /* IRequestProcessor.swift */; };
 		EBB15E781B5EAE220083D71C /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB15E771B5EAE220083D71C /* Image.swift */; };
 		EBB15E7A1B5EB1170083D71C /* Processable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB15E791B5EB1170083D71C /* Processable.swift */; };
@@ -49,6 +51,8 @@
 /* Begin PBXFileReference section */
 		EB43199E1B62C94E00E3E5B3 /* ImageRequestProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRequestProcessor.swift; sourceTree = "<group>"; };
 		EB4319A21B62DA2E00E3E5B3 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
+		EB4A2C1F1B63AF970076205E /* DownloadImageResponseProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadImageResponseProcessor.swift; sourceTree = "<group>"; };
+		EB4A2C211B63B21B0076205E /* NoRequestProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoRequestProcessor.swift; sourceTree = "<group>"; };
 		EB50075D1B60380800DB482B /* UserResponseProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserResponseProcessor.swift; sourceTree = "<group>"; };
 		EB8DB9361B62F90B008C4031 /* ImageEndpointHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageEndpointHandler.swift; sourceTree = "<group>"; };
 		EB8DB9381B62FBAD008C4031 /* UserRegistrationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegistrationHandler.swift; sourceTree = "<group>"; };
@@ -72,7 +76,7 @@
 		EBA3A7E41B5D93DB005B865C /* RequestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
 		EBA3A7E91B5D952E005B865C /* ResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
 		EBB15E6F1B5EA3C60083D71C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		EBB15E731B5EA93C0083D71C /* IResponseProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IResponseProcessor.swift; sourceTree = "<group>"; };
+		EBB15E731B5EA93C0083D71C /* ResponseProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseProcessor.swift; sourceTree = "<group>"; };
 		EBB15E751B5EAC780083D71C /* IRequestProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRequestProcessor.swift; sourceTree = "<group>"; };
 		EBB15E771B5EAE220083D71C /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		EBB15E791B5EB1170083D71C /* Processable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Processable.swift; sourceTree = "<group>"; };
@@ -194,7 +198,7 @@
 			children = (
 				EBB15E7E1B5EB73F0083D71C /* Impl */,
 				EBA3A7E01B5D7321005B865C /* ConnectionManager.swift */,
-				EBB15E731B5EA93C0083D71C /* IResponseProcessor.swift */,
+				EBB15E731B5EA93C0083D71C /* ResponseProcessor.swift */,
 				EBB15E751B5EAC780083D71C /* IRequestProcessor.swift */,
 				EBB15E7C1B5EB5B20083D71C /* URIBuilder.swift */,
 			);
@@ -227,6 +231,8 @@
 				EBB15E7F1B5EB7680083D71C /* UserRequestProcessor.swift */,
 				EB50075D1B60380800DB482B /* UserResponseProcessor.swift */,
 				EB43199E1B62C94E00E3E5B3 /* ImageRequestProcessor.swift */,
+				EB4A2C1F1B63AF970076205E /* DownloadImageResponseProcessor.swift */,
+				EB4A2C211B63B21B0076205E /* NoRequestProcessor.swift */,
 			);
 			name = Impl;
 			sourceTree = "<group>";
@@ -344,13 +350,15 @@
 				EBB15E801B5EB7680083D71C /* UserRequestProcessor.swift in Sources */,
 				EB8DB93F1B62FBF9008C4031 /* RateUserHandler.swift in Sources */,
 				EBA3A7E11B5D7321005B865C /* ConnectionManager.swift in Sources */,
-				EBB15E741B5EA93C0083D71C /* IResponseProcessor.swift in Sources */,
+				EBB15E741B5EA93C0083D71C /* ResponseProcessor.swift in Sources */,
 				EB8DB93D1B62FBD3008C4031 /* UserLoginHandler.swift in Sources */,
 				EB8DB9371B62F90B008C4031 /* ImageEndpointHandler.swift in Sources */,
 				EBB15E761B5EAC780083D71C /* IRequestProcessor.swift in Sources */,
 				EBA3A7EA1B5D952E005B865C /* ResponseData.swift in Sources */,
+				EB4A2C221B63B21B0076205E /* NoRequestProcessor.swift in Sources */,
 				EBA3A7C01B5D7280005B865C /* AppDelegate.swift in Sources */,
 				EBB15E701B5EA3C60083D71C /* User.swift in Sources */,
+				EB4A2C201B63AF970076205E /* DownloadImageResponseProcessor.swift in Sources */,
 				EBB15E781B5EAE220083D71C /* Image.swift in Sources */,
 				EBB15E7D1B5EB5B20083D71C /* URIBuilder.swift in Sources */,
 				EBB15E7A1B5EB1170083D71C /* Processable.swift in Sources */,

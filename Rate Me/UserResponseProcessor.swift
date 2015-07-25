@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserResponseProcessor : IResponseProcessor {
+class UserResponseProcessor : ResponseProcessor {
 
     override func processResponse(json jsonResult: NSDictionary) ->ResponseData {
     

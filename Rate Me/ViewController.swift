@@ -15,11 +15,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var requestData =  RequestData(domain:"http://rate-server.appspot.com", endpoint: "/blob/uploadUrl", method: "GET")
+        var requestData =  RequestData(domain:"http://lh3.googleusercontent.com/yAimlwZuumge5GEnEzdtKwd4ZjTNwP_QaBPLfxP0pS-aGl37mJ7gVbuIy5xiE5CBSnXZBfvByJX_kUIxunB0yG8", endpoint: "", method: "GET")
 
-        var connection = ConnectionManager(delegate: ImageEndpointHandler(), requestProcessor: UserRequestProcessor(), responseProcessor: UserResponseProcessor())
+        var connection = ConnectionManager(delegate: ImageDownloadHandler(), requestProcessor: NoRequestProcessor(), responseProcessor: DownloadImageResponseProcessor())
         
-        connection.synchonousRequest(requestData)
+        connection.asynchonousImageDownloadRequest(requestData)
         
         // Do any additional setup after loading the view, typically from a nib.
     }

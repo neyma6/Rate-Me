@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ConnectionManagerProtol {
     
@@ -18,12 +19,12 @@ protocol ConnectionManagerProtol {
 class ConnectionManager : NSObject, NSURLConnectionDataDelegate {
     
     var requestProcessor: IRequestProcessor!
-    var responseProcessor: IResponseProcessor!
+    var responseProcessor: ResponseProcessor!
     var delegate: ConnectionManagerProtol!
     
     var response: NSMutableData?
     
-    init(delegate: ConnectionManagerProtol, requestProcessor: IRequestProcessor,responseProcessor: IResponseProcessor) {
+    init(delegate: ConnectionManagerProtol, requestProcessor: IRequestProcessor,responseProcessor: ResponseProcessor) {
         self.delegate = delegate
         self.requestProcessor = requestProcessor
         self.responseProcessor = responseProcessor
@@ -36,7 +37,28 @@ class ConnectionManager : NSObject, NSURLConnectionDataDelegate {
         
     }
     
-    func asynchonousRequest(data: RequestData) {
+    func asynchonousImageDownloadRequest(data: RequestData) {
+        
+        if let imageUrl = NSURL(string: data.domain) {
+            
+            let imageRequest: NSURLRequest = NSURLRequest(URL: imageUrl)
+            let queue: NSOperationQueue = NSOperationQueue.mainQueue()
+            
+            NSURLConnection.sendAsynchronousRequest(imageRequest, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+                
+                var responseDataDict = Dictionary<String, AnyObject>()
+                if data != nil {
+                    responseDataDict["status"] = "success"
+                    responseDataDict["image"] = UIImage(data: data)
+                } else {
+                    responseDataDict["status"] = "error"
+                    responseDataDict["error"] = "no_image"
+                }
+                
+                var responseData = self.responseProcessor.processResponse(json: responseDataDict)
+                self.delegate.responseReceived(responseData)
+            })
+        }
     }
     
     
@@ -58,21 +80,14 @@ class ConnectionManager : NSObject, NSURLConnectionDataDelegate {
     }
     
     func connectionDidFinishLoading(connection: NSURLConnection) {
-        println("finish")
         var error: NSError?
         
-        //var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(self.response!, options: NSJSONReadingOptions.MutableContainers, error: &error) as! NSDictionary
-        
-        //println(json)
-        //var responseData = self.responseProcessor.processResponse(json: json)
-        //delegate.responseReceived(responseData)
-        
-        
         if let dict = NSJSONSerialization.JSONObjectWithData(self.response!, options: NSJSONReadingOptions.MutableContainers, error: &error) as? NSDictionary {
+            
             var responseData = self.responseProcessor.processResponse(json: dict)
             delegate.responseReceived(responseData)
+            
         } else {
-            println("nil")
             let resultString = NSString(data: self.response!, encoding: NSUTF8StringEncoding)
             println("Flawed JSON String: \(resultString)")
         }
