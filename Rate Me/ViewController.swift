@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         
         var requestData =  RequestData(domain:"http://lh3.googleusercontent.com/yAimlwZuumge5GEnEzdtKwd4ZjTNwP_QaBPLfxP0pS-aGl37mJ7gVbuIy5xiE5CBSnXZBfvByJX_kUIxunB0yG8", endpoint: "", method: "GET")
 
-        var connection = ConnectionManager(delegate: ImageDownloadHandler(), requestProcessor: NoRequestProcessor(), responseProcessor: DownloadImageResponseProcessor())
+        var connection = ConnectionManager(delegate: ImageDownloadBridge(), requestProcessor: NoRequestProcessor(), responseProcessor: DownloadImageResponseProcessor())
         
         connection.asynchonousImageDownloadRequest(requestData)
         

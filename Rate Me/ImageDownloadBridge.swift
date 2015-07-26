@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ImageDownloadHandler : ConnectionManagerProtol {
+class ImageDownloadBridge : ConnectionManagerBridgeProtol {
 
     func responseReceived(responseData: ResponseData) {
     

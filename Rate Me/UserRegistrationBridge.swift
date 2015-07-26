@@ -1,5 +1,5 @@
 //
-//  ImageEndpointHandler.swift
+//  UserRegistrationHandler.swift
 //  Rate Me
 //
 //  Created by Gabor Csatlos on 25/07/15.
@@ -8,10 +8,15 @@
 
 import Foundation
 
-class ImageEndpointHandler : ConnectionManagerProtol {
+protocol UserRegistrationProtocol {
+
+    
+}
+
+class UserRegistrationBridge : ConnectionManagerBridgeProtol {
 
     func responseReceived(responseData: ResponseData) {
-        responseData.toString()
+    
     }
     
     func errorReceived(error: NSError?) {

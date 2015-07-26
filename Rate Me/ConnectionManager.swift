@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol ConnectionManagerProtol {
+protocol ConnectionManagerBridgeProtol {
     
     func responseReceived(responseData: ResponseData)
     func errorReceived(error: NSError?)
@@ -20,11 +20,11 @@ class ConnectionManager : NSObject, NSURLConnectionDataDelegate {
     
     var requestProcessor: IRequestProcessor!
     var responseProcessor: ResponseProcessor!
-    var delegate: ConnectionManagerProtol!
+    var delegate: ConnectionManagerBridgeProtol!
     
     var response: NSMutableData?
     
-    init(delegate: ConnectionManagerProtol, requestProcessor: IRequestProcessor,responseProcessor: ResponseProcessor) {
+    init(delegate: ConnectionManagerBridgeProtol, requestProcessor: IRequestProcessor,responseProcessor: ResponseProcessor) {
         self.delegate = delegate
         self.requestProcessor = requestProcessor
         self.responseProcessor = responseProcessor
