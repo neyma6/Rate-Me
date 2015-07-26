@@ -10,16 +10,26 @@ import Foundation
 
 protocol UserRegistrationProtocol {
 
+    func userRegistrationResponseReceived(responseData: ResponseData)
+    func userRegistrationErrorReceived(error: NSError?)
     
 }
 
 class UserRegistrationBridge : ConnectionManagerBridgeProtol {
+    
+    var delegate: UserRegistrationProtocol!
+    
+    init(delegate: UserRegistrationProtocol) {
+        self.delegate = delegate
+    }
 
     func responseReceived(responseData: ResponseData) {
     
+        delegate.userRegistrationResponseReceived(responseData)
     }
     
     func errorReceived(error: NSError?) {
     
+        delegate.userRegistrationErrorReceived(error)
     }
 }

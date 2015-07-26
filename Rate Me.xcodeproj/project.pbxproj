@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		EB1DD89A1B64DB5500979A5B /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1DD8991B64DB5500979A5B /* RegistrationController.swift */; };
+		EB1DD89C1B64E74E00979A5B /* DefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1DD89B1B64E74E00979A5B /* DefaultViewController.swift */; };
+		EB1DD89F1B64E9EF00979A5B /* UserRegistrationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1DD89E1B64E9EF00979A5B /* UserRegistrationCell.swift */; };
+		EB1DD8A21B65175200979A5B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1DD8A11B65175200979A5B /* CustomTextField.swift */; };
+		EB1DD8A51B6519E600979A5B /* UIElementCreationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1DD8A41B6519E600979A5B /* UIElementCreationUtil.swift */; };
 		EB43199F1B62C94E00E3E5B3 /* ImageRequestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB43199E1B62C94E00E3E5B3 /* ImageRequestProcessor.swift */; };
 		EB4319A31B62DA2E00E3E5B3 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB4319A21B62DA2E00E3E5B3 /* test.jpg */; };
 		EB4A2C201B63AF970076205E /* DownloadImageResponseProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A2C1F1B63AF970076205E /* DownloadImageResponseProcessor.swift */; };
@@ -51,6 +55,10 @@
 
 /* Begin PBXFileReference section */
 		EB1DD8991B64DB5500979A5B /* RegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		EB1DD89B1B64E74E00979A5B /* DefaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultViewController.swift; sourceTree = "<group>"; };
+		EB1DD89E1B64E9EF00979A5B /* UserRegistrationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegistrationCell.swift; sourceTree = "<group>"; };
+		EB1DD8A11B65175200979A5B /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		EB1DD8A41B6519E600979A5B /* UIElementCreationUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIElementCreationUtil.swift; sourceTree = "<group>"; };
 		EB43199E1B62C94E00E3E5B3 /* ImageRequestProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRequestProcessor.swift; sourceTree = "<group>"; };
 		EB4319A21B62DA2E00E3E5B3 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		EB4A2C1F1B63AF970076205E /* DownloadImageResponseProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadImageResponseProcessor.swift; sourceTree = "<group>"; };
@@ -104,6 +112,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB1DD89D1B64E90500979A5B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EB1DD89E1B64E9EF00979A5B /* UserRegistrationCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		EB1DD8A01B65174100979A5B /* Element */ = {
+			isa = PBXGroup;
+			children = (
+				EB1DD8A11B65175200979A5B /* CustomTextField.swift */,
+			);
+			name = Element;
+			sourceTree = "<group>";
+		};
+		EB1DD8A31B6519C300979A5B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EB1DD8A41B6519E600979A5B /* UIElementCreationUtil.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		EB4A2C1D1B63AAF10076205E /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +148,11 @@
 		EB4A2C1E1B63AB790076205E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EB1DD8A31B6519C300979A5B /* Util */,
+				EB1DD8A01B65174100979A5B /* Element */,
+				EB1DD89D1B64E90500979A5B /* Cell */,
 				EBA3A7C11B5D7280005B865C /* ViewController.swift */,
+				EB1DD89B1B64E74E00979A5B /* DefaultViewController.swift */,
 				EB1DD8991B64DB5500979A5B /* RegistrationController.swift */,
 			);
 			name = ViewController;
@@ -341,13 +377,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB1DD8A21B65175200979A5B /* CustomTextField.swift in Sources */,
 				EB8DB9391B62FBAD008C4031 /* UserRegistrationBridge.swift in Sources */,
 				EBA3A7C21B5D7280005B865C /* ViewController.swift in Sources */,
 				EB8DB9451B62FC7D008C4031 /* ImageDownloadBridge.swift in Sources */,
 				EBA3A7E51B5D93DB005B865C /* RequestData.swift in Sources */,
 				EB8DB9411B62FC0C008C4031 /* GetRandomUserBridge.swift in Sources */,
 				EB43199F1B62C94E00E3E5B3 /* ImageRequestProcessor.swift in Sources */,
+				EB1DD89F1B64E9EF00979A5B /* UserRegistrationCell.swift in Sources */,
 				EB50075E1B60380800DB482B /* UserResponseProcessor.swift in Sources */,
+				EB1DD8A51B6519E600979A5B /* UIElementCreationUtil.swift in Sources */,
 				EB8DB93B1B62FBB7008C4031 /* UserUpdateBridge.swift in Sources */,
 				EB1DD89A1B64DB5500979A5B /* RegistrationController.swift in Sources */,
 				EB8DB9431B62FC50008C4031 /* ImageUploadBridge.swift in Sources */,
@@ -361,6 +400,7 @@
 				EBA3A7EA1B5D952E005B865C /* ResponseData.swift in Sources */,
 				EB4A2C221B63B21B0076205E /* NoRequestProcessor.swift in Sources */,
 				EBA3A7C01B5D7280005B865C /* AppDelegate.swift in Sources */,
+				EB1DD89C1B64E74E00979A5B /* DefaultViewController.swift in Sources */,
 				EBB15E701B5EA3C60083D71C /* User.swift in Sources */,
 				EB4A2C201B63AF970076205E /* DownloadImageResponseProcessor.swift in Sources */,
 				EBB15E781B5EAE220083D71C /* Image.swift in Sources */,

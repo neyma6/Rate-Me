@@ -9,7 +9,20 @@
 import Foundation
 import UIKit
 
-class RegistrationController : UIViewController {
+class RegistrationController : DefaultViewController, UserRegistrationProtocol {
 
+    override func viewDidLoad() {
+        cells.append(UserRegistrationCell())
+        super.viewDidLoad()
+    }
     
+    //UserRegistrationProtocol
+    func userRegistrationResponseReceived(responseData: ResponseData) {
+        
+    }
+    
+    //UserRegistrationProtocol
+    func userRegistrationErrorReceived(error: NSError?) {
+        
+    }
 }
