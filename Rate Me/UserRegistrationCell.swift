@@ -18,22 +18,24 @@ class UserRegistrationCell : UITableViewCell, UITextFieldDelegate {
     
     var userIdLabel: UILabel!
     var userPasswordLabel: UILabel!
-    var userName: UILabel!
+    var userNameLabel: UILabel!
     
     var userIdTextField: CustomTextField!
     var userPasswordTextField: CustomTextField!
+    var userNameTextField: CustomTextField!
+    
     
     init() {
         super.init(style: UITableViewCellStyle.Default, reuseIdentifier: "")
         var mainWindowBounds = UIScreen.mainScreen().bounds
-        self.frame = CGRectMake(0, 0, mainWindowBounds.width, 400)
-        self.backgroundColor = UIColor.redColor()
+        self.frame = CGRectMake(0, 0, mainWindowBounds.width, 240)
+        self.backgroundColor = UIColor.lightGrayColor()
         
-        userIdLabel = UIElementCreationUtil.createUILabel(CGRectMake(UserRegistrationCell.X_START, 20, mainWindowBounds.width - UserRegistrationCell.OFFSET, UserRegistrationCell.ELEMENT_HEIGHT), labelText: "Email")
+        userIdLabel = UIElementCreationUtil.createUILabel(CGRectMake(UserRegistrationCell.X_START, 10, mainWindowBounds.width - UserRegistrationCell.OFFSET, UserRegistrationCell.ELEMENT_HEIGHT), labelText: "Email")
         
         
         userIdTextField = UIElementCreationUtil.createTextField(
-            CGRectMake(UserRegistrationCell.X_START, userIdLabel.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT + UserRegistrationCell.SPACE_BETWEEN_ELEMENTS, mainWindowBounds.width - UserRegistrationCell.OFFSET, UserRegistrationCell.ELEMENT_HEIGHT),
+            CGRectMake(UserRegistrationCell.X_START, userIdLabel.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT, mainWindowBounds.width - UserRegistrationCell.OFFSET, UserRegistrationCell.ELEMENT_HEIGHT),
             placeholder: "Add your email address", delegate: self, isPasswordField: false)
         
         userPasswordLabel = UIElementCreationUtil.createUILabel(
@@ -41,18 +43,28 @@ class UserRegistrationCell : UITableViewCell, UITextFieldDelegate {
             , labelText: "Password")
         
         userPasswordTextField = UIElementCreationUtil.createTextField(
-            CGRectMake(UserRegistrationCell.X_START, userPasswordLabel.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT + UserRegistrationCell.SPACE_BETWEEN_ELEMENTS, mainWindowBounds.width - UserRegistrationCell.OFFSET, UserRegistrationCell.ELEMENT_HEIGHT),
+            CGRectMake(UserRegistrationCell.X_START, userPasswordLabel.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT , mainWindowBounds.width - UserRegistrationCell.OFFSET, UserRegistrationCell.ELEMENT_HEIGHT),
             placeholder: "Enter a password", delegate: self, isPasswordField: true)
+        
+        userNameLabel = UIElementCreationUtil.createUILabel(
+            CGRectMake(UserRegistrationCell.X_START, userPasswordTextField.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT + UserRegistrationCell.SPACE_BETWEEN_ELEMENTS, mainWindowBounds.width - UserRegistrationCell.OFFSET, UserRegistrationCell.ELEMENT_HEIGHT)
+            , labelText: "Name")
+        
+        userNameTextField = UIElementCreationUtil.createTextField(
+            CGRectMake(UserRegistrationCell.X_START, userNameLabel.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT, mainWindowBounds.width - UserRegistrationCell.OFFSET, UserRegistrationCell.ELEMENT_HEIGHT),
+            placeholder: "Enter your name", delegate: self, isPasswordField: false)
         
         self.addSubview(userIdLabel)
         self.addSubview(userIdTextField)
         self.addSubview(userPasswordLabel)
         self.addSubview(userPasswordTextField)
+        self.addSubview(userNameLabel)
+        self.addSubview(userNameTextField)
     }
     
 
     required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     //UITextFieldDelegate

@@ -16,7 +16,6 @@ class UIElementCreationUtil {
         var label = UILabel()
         label.frame = frame
         label.text = labelText
-        label.backgroundColor = UIColor.yellowColor()
         
         return label;
     }
@@ -36,5 +35,15 @@ class UIElementCreationUtil {
         textField.delegate = delegate
     
         return textField;
+    }
+    
+    class func createUIButton(frame: CGRect, buttonLabel: String, target: AnyObject, action: Selector) ->UIButton {
+    
+        var button   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+        button.frame = frame
+        button.backgroundColor = UIColor.greenColor()
+        button.setTitle(buttonLabel, forState: UIControlState.Normal)
+        button.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        return button
     }
 }
