@@ -12,6 +12,7 @@ import UIKit
 class RegistrationController : DefaultViewController, UserRegistrationProtocol, SubmitProtocol {
 
     override func viewDidLoad() {
+        cells.append(HeaderCell(title: "Registration"))
         cells.append(UserRegistrationCell())
         cells.append(SubmitCell(delegate: self, submitButtonLabel: "Register", cancelButtonLabel: "Cancel"))
         super.viewDidLoad()
@@ -39,7 +40,7 @@ class RegistrationController : DefaultViewController, UserRegistrationProtocol, 
     }
     
     func callRateServer() {
-        var registrationCell = cells[0] as! UserRegistrationCell
+        var registrationCell = cells[1] as! UserRegistrationCell
         var id = registrationCell.userIdTextField.text
         var password = registrationCell.userPasswordTextField.text
         var name = registrationCell.userNameTextField.text

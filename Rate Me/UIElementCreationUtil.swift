@@ -39,11 +39,13 @@ class UIElementCreationUtil {
     
     class func createUIButton(frame: CGRect, buttonLabel: String, target: AnyObject, action: Selector) ->UIButton {
     
-        var button   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+        var button   = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         button.frame = frame
-        button.backgroundColor = UIColor.greenColor()
+        button.backgroundColor = UIColor.clearColor()
         button.setTitle(buttonLabel, forState: UIControlState.Normal)
         button.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        button.setBackgroundImage(UIImage(named: "button_basic.png"), forState: UIControlState.Normal)
+        button.setImage(UIImage(named: "button_pressed.png"), forState: UIControlState.Highlighted|UIControlState.Selected)
         return button
     }
 }

@@ -29,9 +29,9 @@ class UserRegistrationCell : UITableViewCell, UITextFieldDelegate {
         super.init(style: UITableViewCellStyle.Default, reuseIdentifier: "")
         var mainWindowBounds = UIScreen.mainScreen().bounds
         self.frame = CGRectMake(0, 0, mainWindowBounds.width, 240)
-        self.backgroundColor = UIColor.lightGrayColor()
+        self.backgroundColor = UIColor.clearColor()
         
-        userIdLabel = UIElementCreationUtil.createUILabel(CGRectMake(UserRegistrationCell.X_START, 10, mainWindowBounds.width - UserRegistrationCell.OFFSET, UserRegistrationCell.ELEMENT_HEIGHT), labelText: "Email")
+        userIdLabel = UIElementCreationUtil.createUILabel(CGRectMake(UserRegistrationCell.X_START, 0, mainWindowBounds.width - UserRegistrationCell.OFFSET, UserRegistrationCell.ELEMENT_HEIGHT), labelText: "Email")
         
         
         userIdTextField = UIElementCreationUtil.createTextField(

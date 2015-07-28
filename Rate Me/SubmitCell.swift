@@ -18,7 +18,7 @@ protocol SubmitProtocol {
 class SubmitCell : UITableViewCell {
 
     static let CELL_HEIGHT: CGFloat = 80
-    static let BUTTON_WIDTH: CGFloat = 100
+    static let BUTTON_WIDTH: CGFloat = 120
     static let BUTTON_HEIGHT: CGFloat = 30
     static let SPACE_BETWEEN_BUTTONS: CGFloat = 10
     

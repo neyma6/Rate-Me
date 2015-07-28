@@ -17,6 +17,13 @@ class DefaultViewController : UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.frame = UIScreen.mainScreen().bounds
+        self.view.backgroundColor = UIColor.clearColor()
+        
+        let gradientMain = GradientColor(firstGradient: "#FF5E3A", secondGradient: "#FF9500")
+        var backgroundLayerMain = gradientMain.gl
+        backgroundLayerMain.frame = self.view.frame
+        self.view.layer.insertSublayer(backgroundLayerMain, atIndex: 0)
+        
         createTableView()
     }
     
@@ -27,6 +34,11 @@ class DefaultViewController : UIViewController, UITableViewDataSource, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = false
+        
+        let gradientTable = GradientColor(firstGradient: "#FF5E3A", secondGradient: "#FF9500")
+        var backgroundLayerTable = gradientTable.gl
+        backgroundLayerTable.frame = tableView.frame
+        tableView.layer.insertSublayer(backgroundLayerTable, atIndex: 0)
         
         self.view.addSubview(tableView)
     }
