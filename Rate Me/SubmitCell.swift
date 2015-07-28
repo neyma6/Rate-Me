@@ -17,7 +17,7 @@ protocol SubmitProtocol {
 
 class SubmitCell : UITableViewCell {
 
-    static let CELL_HEIGHT: CGFloat = 80
+    static let CELL_HEIGHT: CGFloat = 60
     static let BUTTON_WIDTH: CGFloat = 120
     static let BUTTON_HEIGHT: CGFloat = 30
     static let SPACE_BETWEEN_BUTTONS: CGFloat = 10
@@ -31,7 +31,7 @@ class SubmitCell : UITableViewCell {
         self.delegate = delegate
         var mainWindowBounds = UIScreen.mainScreen().bounds
         self.frame = CGRectMake(0, 0, mainWindowBounds.width, SubmitCell.CELL_HEIGHT)
-        self.backgroundColor = UIColor.lightGrayColor()
+        self.backgroundColor = UIColor.clearColor()
         
         var submitButtonRect: CGRect
         if (cancelButtonLabel == nil) {

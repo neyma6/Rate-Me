@@ -12,13 +12,15 @@ import UIKit
 class UserRegistrationCell : UITableViewCell, UITextFieldDelegate {
 
     static let X_START: CGFloat = 20
+    static let Y_START: CGFloat = 20
     static let OFFSET: CGFloat = 40
-    static let ELEMENT_HEIGHT: CGFloat = 30
+    static let ELEMENT_HEIGHT: CGFloat = 50
     static let SPACE_BETWEEN_ELEMENTS: CGFloat = 10
+    static let CELL_HEIGHT: CGFloat = 210
     
-    var userIdLabel: UILabel!
-    var userPasswordLabel: UILabel!
-    var userNameLabel: UILabel!
+    var idLogo: UIImageView!
+    var passwordLogo: UIImageView!
+    var nameLogo: UIImageView!
     
     var userIdTextField: CustomTextField!
     var userPasswordTextField: CustomTextField!
@@ -28,37 +30,40 @@ class UserRegistrationCell : UITableViewCell, UITextFieldDelegate {
     init() {
         super.init(style: UITableViewCellStyle.Default, reuseIdentifier: "")
         var mainWindowBounds = UIScreen.mainScreen().bounds
-        self.frame = CGRectMake(0, 0, mainWindowBounds.width, 240)
+        self.frame = CGRectMake(0, 0, mainWindowBounds.width, UserRegistrationCell.CELL_HEIGHT)
         self.backgroundColor = UIColor.clearColor()
         
-        userIdLabel = UIElementCreationUtil.createUILabel(CGRectMake(UserRegistrationCell.X_START, 0, mainWindowBounds.width - UserRegistrationCell.OFFSET, UserRegistrationCell.ELEMENT_HEIGHT), labelText: "Email")
-        
+        var idImage = UIImage(named: "email_logo_nop.png")
+        idLogo = UIImageView(image: idImage)
+        idLogo.frame = CGRectMake(UserRegistrationCell.X_START, UserRegistrationCell.Y_START, UserRegistrationCell.ELEMENT_HEIGHT, UserRegistrationCell.ELEMENT_HEIGHT)
         
         userIdTextField = UIElementCreationUtil.createTextField(
-            CGRectMake(UserRegistrationCell.X_START, userIdLabel.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT, mainWindowBounds.width - UserRegistrationCell.OFFSET, UserRegistrationCell.ELEMENT_HEIGHT),
+            CGRectMake(UserRegistrationCell.X_START + UserRegistrationCell.ELEMENT_HEIGHT, UserRegistrationCell.Y_START, mainWindowBounds.width - UserRegistrationCell.OFFSET - UserRegistrationCell.ELEMENT_HEIGHT, UserRegistrationCell.ELEMENT_HEIGHT),
             placeholder: "Add your email address", delegate: self, isPasswordField: false)
         
-        userPasswordLabel = UIElementCreationUtil.createUILabel(
-            CGRectMake(UserRegistrationCell.X_START, userIdTextField.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT + UserRegistrationCell.SPACE_BETWEEN_ELEMENTS, mainWindowBounds.width - UserRegistrationCell.OFFSET, UserRegistrationCell.ELEMENT_HEIGHT)
-            , labelText: "Password")
+        var passwordImage = UIImage(named: "password_logo_nop.png")
+        passwordLogo = UIImageView(image: passwordImage)
+        passwordLogo.frame = CGRectMake(UserRegistrationCell.X_START, userIdTextField.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT + UserRegistrationCell.SPACE_BETWEEN_ELEMENTS, UserRegistrationCell.ELEMENT_HEIGHT, UserRegistrationCell.ELEMENT_HEIGHT)
+        
         
         userPasswordTextField = UIElementCreationUtil.createTextField(
-            CGRectMake(UserRegistrationCell.X_START, userPasswordLabel.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT , mainWindowBounds.width - UserRegistrationCell.OFFSET, UserRegistrationCell.ELEMENT_HEIGHT),
+            CGRectMake(UserRegistrationCell.X_START + UserRegistrationCell.ELEMENT_HEIGHT, userIdTextField.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT + UserRegistrationCell.SPACE_BETWEEN_ELEMENTS, mainWindowBounds.width - UserRegistrationCell.OFFSET - UserRegistrationCell.ELEMENT_HEIGHT, UserRegistrationCell.ELEMENT_HEIGHT),
             placeholder: "Enter a password", delegate: self, isPasswordField: true)
         
-        userNameLabel = UIElementCreationUtil.createUILabel(
-            CGRectMake(UserRegistrationCell.X_START, userPasswordTextField.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT + UserRegistrationCell.SPACE_BETWEEN_ELEMENTS, mainWindowBounds.width - UserRegistrationCell.OFFSET, UserRegistrationCell.ELEMENT_HEIGHT)
-            , labelText: "Name")
+        
+        var nameImage = UIImage(named: "name_logo_nop.png")
+        nameLogo = UIImageView(image: nameImage)
+        nameLogo.frame = CGRectMake(UserRegistrationCell.X_START, userPasswordTextField.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT + UserRegistrationCell.SPACE_BETWEEN_ELEMENTS, UserRegistrationCell.ELEMENT_HEIGHT, UserRegistrationCell.ELEMENT_HEIGHT)
         
         userNameTextField = UIElementCreationUtil.createTextField(
-            CGRectMake(UserRegistrationCell.X_START, userNameLabel.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT, mainWindowBounds.width - UserRegistrationCell.OFFSET, UserRegistrationCell.ELEMENT_HEIGHT),
+            CGRectMake(UserRegistrationCell.X_START + UserRegistrationCell.ELEMENT_HEIGHT, userPasswordTextField.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT + UserRegistrationCell.SPACE_BETWEEN_ELEMENTS, mainWindowBounds.width - UserRegistrationCell.OFFSET - UserRegistrationCell.ELEMENT_HEIGHT, UserRegistrationCell.ELEMENT_HEIGHT),
             placeholder: "Enter your name", delegate: self, isPasswordField: false)
         
-        self.addSubview(userIdLabel)
+        self.addSubview(idLogo)
         self.addSubview(userIdTextField)
-        self.addSubview(userPasswordLabel)
+        self.addSubview(passwordLogo)
         self.addSubview(userPasswordTextField)
-        self.addSubview(userNameLabel)
+        self.addSubview(nameLogo)
         self.addSubview(userNameTextField)
     }
     

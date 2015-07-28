@@ -19,10 +19,10 @@ class DefaultViewController : UIViewController, UITableViewDataSource, UITableVi
         self.view.frame = UIScreen.mainScreen().bounds
         self.view.backgroundColor = UIColor.clearColor()
         
-        let gradientMain = GradientColor(firstGradient: "#FF5E3A", secondGradient: "#FF9500")
+        /*let gradientMain = GradientColor(firstGradient: "#DBDDDE", secondGradient: "#898C90")
         var backgroundLayerMain = gradientMain.gl
         backgroundLayerMain.frame = self.view.frame
-        self.view.layer.insertSublayer(backgroundLayerMain, atIndex: 0)
+        self.view.layer.insertSublayer(backgroundLayerMain, atIndex: 0)*/
         
         createTableView()
     }
@@ -35,7 +35,7 @@ class DefaultViewController : UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         tableView.allowsSelection = false
         
-        let gradientTable = GradientColor(firstGradient: "#FF5E3A", secondGradient: "#FF9500")
+        let gradientTable = GradientColor(firstGradient: "#DBDDDE", secondGradient: "#898C90")
         var backgroundLayerTable = gradientTable.gl
         backgroundLayerTable.frame = tableView.frame
         tableView.layer.insertSublayer(backgroundLayerTable, atIndex: 0)

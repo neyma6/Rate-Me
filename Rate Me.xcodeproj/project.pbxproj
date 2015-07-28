@@ -47,6 +47,14 @@
 		EBFB32401B67CC4700B87811 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB323F1B67CC4700B87811 /* UIColorExtension.swift */; };
 		EBFB32421B67CCD100B87811 /* GradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB32411B67CCD100B87811 /* GradientColor.swift */; };
 		EBFB32441B67D00200B87811 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB32431B67D00200B87811 /* HeaderCell.swift */; };
+		EBFB32461B67F81800B87811 /* BlankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB32451B67F81800B87811 /* BlankCell.swift */; };
+		EBFB32481B67FBA200B87811 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFB32471B67FBA200B87811 /* logo.png */; };
+		EBFB324C1B68105F00B87811 /* email_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFB32491B68105F00B87811 /* email_logo.png */; };
+		EBFB324D1B68105F00B87811 /* name_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFB324A1B68105F00B87811 /* name_logo.png */; };
+		EBFB324E1B68105F00B87811 /* password_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFB324B1B68105F00B87811 /* password_logo.png */; };
+		EBFB32521B68188200B87811 /* email_logo_nop.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFB324F1B68188200B87811 /* email_logo_nop.png */; };
+		EBFB32531B68188200B87811 /* name_logo_nop.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFB32501B68188200B87811 /* name_logo_nop.png */; };
+		EBFB32541B68188200B87811 /* password_logo_nop.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFB32511B68188200B87811 /* password_logo_nop.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +112,14 @@
 		EBFB323F1B67CC4700B87811 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		EBFB32411B67CCD100B87811 /* GradientColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientColor.swift; sourceTree = "<group>"; };
 		EBFB32431B67D00200B87811 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		EBFB32451B67F81800B87811 /* BlankCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankCell.swift; sourceTree = "<group>"; };
+		EBFB32471B67FBA200B87811 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Images/logo.png; sourceTree = "<group>"; };
+		EBFB32491B68105F00B87811 /* email_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = email_logo.png; path = Images/email_logo.png; sourceTree = "<group>"; };
+		EBFB324A1B68105F00B87811 /* name_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = name_logo.png; path = Images/name_logo.png; sourceTree = "<group>"; };
+		EBFB324B1B68105F00B87811 /* password_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = password_logo.png; path = Images/password_logo.png; sourceTree = "<group>"; };
+		EBFB324F1B68188200B87811 /* email_logo_nop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = email_logo_nop.png; path = Images/email_logo_nop.png; sourceTree = "<group>"; };
+		EBFB32501B68188200B87811 /* name_logo_nop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = name_logo_nop.png; path = Images/name_logo_nop.png; sourceTree = "<group>"; };
+		EBFB32511B68188200B87811 /* password_logo_nop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = password_logo_nop.png; path = Images/password_logo_nop.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +146,7 @@
 				EB1DD89E1B64E9EF00979A5B /* UserRegistrationCell.swift */,
 				EBC404781B66B88F0015B175 /* SubmitCell.swift */,
 				EBFB32431B67D00200B87811 /* HeaderCell.swift */,
+				EBFB32451B67F81800B87811 /* BlankCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -296,6 +313,13 @@
 		EBFB32361B67C66E00B87811 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EBFB324F1B68188200B87811 /* email_logo_nop.png */,
+				EBFB32501B68188200B87811 /* name_logo_nop.png */,
+				EBFB32511B68188200B87811 /* password_logo_nop.png */,
+				EBFB32491B68105F00B87811 /* email_logo.png */,
+				EBFB324A1B68105F00B87811 /* name_logo.png */,
+				EBFB324B1B68105F00B87811 /* password_logo.png */,
+				EBFB32471B67FBA200B87811 /* logo.png */,
 				EBFB323B1B67CA5300B87811 /* button_basic.png */,
 				EBFB323C1B67CA5300B87811 /* button_pressed.png */,
 			);
@@ -383,9 +407,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBA3A7C51B5D7280005B865C /* Main.storyboard in Resources */,
+				EBFB32531B68188200B87811 /* name_logo_nop.png in Resources */,
+				EBFB324C1B68105F00B87811 /* email_logo.png in Resources */,
 				EBFB323D1B67CA5300B87811 /* button_basic.png in Resources */,
+				EBFB324E1B68105F00B87811 /* password_logo.png in Resources */,
+				EBFB32541B68188200B87811 /* password_logo_nop.png in Resources */,
 				EBFB323E1B67CA5300B87811 /* button_pressed.png in Resources */,
+				EBFB324D1B68105F00B87811 /* name_logo.png in Resources */,
 				EBA3A7CA1B5D7280005B865C /* LaunchScreen.xib in Resources */,
+				EBFB32481B67FBA200B87811 /* logo.png in Resources */,
+				EBFB32521B68188200B87811 /* email_logo_nop.png in Resources */,
 				EBA3A7C71B5D7280005B865C /* Images.xcassets in Resources */,
 				EB4319A31B62DA2E00E3E5B3 /* test.jpg in Resources */,
 			);
@@ -421,6 +452,7 @@
 				EBB15E801B5EB7680083D71C /* UserRequestProcessor.swift in Sources */,
 				EB8DB93F1B62FBF9008C4031 /* RateUserBridge.swift in Sources */,
 				EBA3A7E11B5D7321005B865C /* ConnectionManager.swift in Sources */,
+				EBFB32461B67F81800B87811 /* BlankCell.swift in Sources */,
 				EBB15E741B5EA93C0083D71C /* ResponseProcessor.swift in Sources */,
 				EBFB32401B67CC4700B87811 /* UIColorExtension.swift in Sources */,
 				EB8DB93D1B62FBD3008C4031 /* UserLoginBridge.swift in Sources */,

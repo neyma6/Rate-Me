@@ -12,6 +12,7 @@ import UIKit
 class RegistrationController : DefaultViewController, UserRegistrationProtocol, SubmitProtocol {
 
     override func viewDidLoad() {
+        cells.append(BlankCell(height: determineBlankCellSize()))
         cells.append(HeaderCell(title: "Registration"))
         cells.append(UserRegistrationCell())
         cells.append(SubmitCell(delegate: self, submitButtonLabel: "Register", cancelButtonLabel: "Cancel"))
@@ -40,7 +41,7 @@ class RegistrationController : DefaultViewController, UserRegistrationProtocol, 
     }
     
     func callRateServer() {
-        var registrationCell = cells[1] as! UserRegistrationCell
+        var registrationCell = cells[2] as! UserRegistrationCell
         var id = registrationCell.userIdTextField.text
         var password = registrationCell.userPasswordTextField.text
         var name = registrationCell.userNameTextField.text
@@ -54,5 +55,13 @@ class RegistrationController : DefaultViewController, UserRegistrationProtocol, 
         var connection = ConnectionManager(delegate: UserRegistrationBridge(delegate: self), requestProcessor: UserRequestProcessor(), responseProcessor: UserResponseProcessor())
         
         connection.synchonousRequest(request)
+    }
+    
+    func determineBlankCellSize() ->CGFloat {
+        var mainWindowHeight = UIScreen.mainScreen().bounds.height
+        var contentHeight = UserRegistrationCell.CELL_HEIGHT + SubmitCell.CELL_HEIGHT
+        var headerHeight = HeaderCell.CELL_HEIGHT
+        
+        return mainWindowHeight / 2 - contentHeight / 2 - headerHeight;
     }
 }
