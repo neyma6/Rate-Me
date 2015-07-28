@@ -33,7 +33,7 @@ class UserRegistrationCell : UITableViewCell, UITextFieldDelegate {
         self.frame = CGRectMake(0, 0, mainWindowBounds.width, UserRegistrationCell.CELL_HEIGHT)
         self.backgroundColor = UIColor.clearColor()
         
-        var idImage = UIImage(named: "email_logo_nop.png")
+        var idImage = UIImage(named: "email_logo_red.png")
         idLogo = UIImageView(image: idImage)
         idLogo.frame = CGRectMake(UserRegistrationCell.X_START, UserRegistrationCell.Y_START, UserRegistrationCell.ELEMENT_HEIGHT, UserRegistrationCell.ELEMENT_HEIGHT)
         
@@ -41,7 +41,7 @@ class UserRegistrationCell : UITableViewCell, UITextFieldDelegate {
             CGRectMake(UserRegistrationCell.X_START + UserRegistrationCell.ELEMENT_HEIGHT, UserRegistrationCell.Y_START, mainWindowBounds.width - UserRegistrationCell.OFFSET - UserRegistrationCell.ELEMENT_HEIGHT, UserRegistrationCell.ELEMENT_HEIGHT),
             placeholder: "Add your email address", delegate: self, isPasswordField: false)
         
-        var passwordImage = UIImage(named: "password_logo_nop.png")
+        var passwordImage = UIImage(named: "password_logo_red.png")
         passwordLogo = UIImageView(image: passwordImage)
         passwordLogo.frame = CGRectMake(UserRegistrationCell.X_START, userIdTextField.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT + UserRegistrationCell.SPACE_BETWEEN_ELEMENTS, UserRegistrationCell.ELEMENT_HEIGHT, UserRegistrationCell.ELEMENT_HEIGHT)
         
@@ -51,7 +51,7 @@ class UserRegistrationCell : UITableViewCell, UITextFieldDelegate {
             placeholder: "Enter a password", delegate: self, isPasswordField: true)
         
         
-        var nameImage = UIImage(named: "name_logo_nop.png")
+        var nameImage = UIImage(named: "name_logo_red.png")
         nameLogo = UIImageView(image: nameImage)
         nameLogo.frame = CGRectMake(UserRegistrationCell.X_START, userPasswordTextField.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT + UserRegistrationCell.SPACE_BETWEEN_ELEMENTS, UserRegistrationCell.ELEMENT_HEIGHT, UserRegistrationCell.ELEMENT_HEIGHT)
         

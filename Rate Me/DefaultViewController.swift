@@ -35,7 +35,7 @@ class DefaultViewController : UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         tableView.allowsSelection = false
         
-        let gradientTable = GradientColor(firstGradient: "#DBDDDE", secondGradient: "#898C90")
+        let gradientTable = GradientColor(firstGradient: "#FF9500", secondGradient: "#FF5E3A")
         var backgroundLayerTable = gradientTable.gl
         backgroundLayerTable.frame = tableView.frame
         tableView.layer.insertSublayer(backgroundLayerTable, atIndex: 0)

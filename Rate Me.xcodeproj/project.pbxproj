@@ -55,6 +55,9 @@
 		EBFB32521B68188200B87811 /* email_logo_nop.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFB324F1B68188200B87811 /* email_logo_nop.png */; };
 		EBFB32531B68188200B87811 /* name_logo_nop.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFB32501B68188200B87811 /* name_logo_nop.png */; };
 		EBFB32541B68188200B87811 /* password_logo_nop.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFB32511B68188200B87811 /* password_logo_nop.png */; };
+		EBFB32581B681B8D00B87811 /* email_logo_red.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFB32551B681B8D00B87811 /* email_logo_red.png */; };
+		EBFB32591B681B8D00B87811 /* name_logo_red.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFB32561B681B8D00B87811 /* name_logo_red.png */; };
+		EBFB325A1B681B8D00B87811 /* password_logo_red.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFB32571B681B8D00B87811 /* password_logo_red.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +123,9 @@
 		EBFB324F1B68188200B87811 /* email_logo_nop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = email_logo_nop.png; path = Images/email_logo_nop.png; sourceTree = "<group>"; };
 		EBFB32501B68188200B87811 /* name_logo_nop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = name_logo_nop.png; path = Images/name_logo_nop.png; sourceTree = "<group>"; };
 		EBFB32511B68188200B87811 /* password_logo_nop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = password_logo_nop.png; path = Images/password_logo_nop.png; sourceTree = "<group>"; };
+		EBFB32551B681B8D00B87811 /* email_logo_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = email_logo_red.png; path = Images/email_logo_red.png; sourceTree = "<group>"; };
+		EBFB32561B681B8D00B87811 /* name_logo_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = name_logo_red.png; path = Images/name_logo_red.png; sourceTree = "<group>"; };
+		EBFB32571B681B8D00B87811 /* password_logo_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = password_logo_red.png; path = Images/password_logo_red.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +319,9 @@
 		EBFB32361B67C66E00B87811 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EBFB32551B681B8D00B87811 /* email_logo_red.png */,
+				EBFB32561B681B8D00B87811 /* name_logo_red.png */,
+				EBFB32571B681B8D00B87811 /* password_logo_red.png */,
 				EBFB324F1B68188200B87811 /* email_logo_nop.png */,
 				EBFB32501B68188200B87811 /* name_logo_nop.png */,
 				EBFB32511B68188200B87811 /* password_logo_nop.png */,
@@ -407,8 +416,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBA3A7C51B5D7280005B865C /* Main.storyboard in Resources */,
+				EBFB32581B681B8D00B87811 /* email_logo_red.png in Resources */,
 				EBFB32531B68188200B87811 /* name_logo_nop.png in Resources */,
 				EBFB324C1B68105F00B87811 /* email_logo.png in Resources */,
+				EBFB32591B681B8D00B87811 /* name_logo_red.png in Resources */,
+				EBFB325A1B681B8D00B87811 /* password_logo_red.png in Resources */,
 				EBFB323D1B67CA5300B87811 /* button_basic.png in Resources */,
 				EBFB324E1B68105F00B87811 /* password_logo.png in Resources */,
 				EBFB32541B68188200B87811 /* password_logo_nop.png in Resources */,
