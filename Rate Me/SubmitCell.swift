@@ -11,16 +11,16 @@ import UIKit
 
 protocol SubmitProtocol {
 
-    func submitButtonPressed()
-    func cancelButtonPressed()
+    func submitButtonPressed(sender: UIButton)
+    func cancelButtonPressed(sender: UIButton)
 }
 
 class SubmitCell : UITableViewCell {
 
-    static let CELL_HEIGHT: CGFloat = 60
-    static let BUTTON_WIDTH: CGFloat = 120
-    static let BUTTON_HEIGHT: CGFloat = 30
-    static let SPACE_BETWEEN_BUTTONS: CGFloat = 10
+    static let CELL_HEIGHT: CGFloat = 70
+    static let BUTTON_WIDTH: CGFloat = 150
+    static let BUTTON_HEIGHT: CGFloat = 50
+    static let SPACE_BETWEEN_BUTTONS: CGFloat = 5
     
     var delegate: SubmitProtocol!
     var submitButtom: UIButton?
@@ -57,9 +57,9 @@ class SubmitCell : UITableViewCell {
     
     func buttonPressed(sender: UIButton!) {
         if (sender == submitButtom) {
-            delegate.submitButtonPressed()
+            delegate.submitButtonPressed(sender)
         } else {
-            delegate.cancelButtonPressed()
+            delegate.cancelButtonPressed(sender)
         }
         
     }

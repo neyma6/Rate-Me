@@ -19,6 +19,8 @@ class User : Processable {
     
     var imageUrl: String?
     
+    var facebookUser: Bool?
+    
     init(userId id: String) {
         self.id = id
     }
@@ -30,5 +32,6 @@ class User : Processable {
         println("imageUrl: \(imageUrl)" )
         println("rateValue: \(rateValue)")
         println("numberOfRates: \(numberOfRates)")
+        println("facebookUser: \(facebookUser)")
     }
 }

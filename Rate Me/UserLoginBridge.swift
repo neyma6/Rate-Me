@@ -7,3 +7,29 @@
 //
 
 import Foundation
+
+protocol UserLoginProtocol {
+    
+    func userLoginResponseReceived(responseData: ResponseData)
+    func userLoginErrorReceived(error: NSError?)
+    
+}
+
+class UserLoginBridge : ConnectionManagerBridgeProtol {
+    
+    var delegate: UserLoginProtocol!
+    
+    init(delegate: UserLoginProtocol) {
+        self.delegate = delegate
+    }
+    
+    func responseReceived(responseData: ResponseData) {
+        
+        delegate.userLoginResponseReceived(responseData)
+    }
+    
+    func errorReceived(error: NSError?) {
+        
+        delegate.userLoginErrorReceived(error)
+    }
+}

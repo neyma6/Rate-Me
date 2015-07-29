@@ -12,10 +12,10 @@ import UIKit
 class RegistrationController : DefaultViewController, UserRegistrationProtocol, SubmitProtocol {
 
     override func viewDidLoad() {
-        cells.append(BlankCell(height: determineBlankCellSize()))
+        cells.append(BlankCell(height: determineBlankCellSize(), imageNeeds: false))
         cells.append(HeaderCell(title: "Registration"))
         cells.append(UserRegistrationCell())
-        cells.append(SubmitCell(delegate: self, submitButtonLabel: "Register", cancelButtonLabel: "Cancel"))
+        cells.append(SubmitCell(delegate: self, submitButtonLabel: "Register", cancelButtonLabel: nil))
         super.viewDidLoad()
     }
     
@@ -30,13 +30,13 @@ class RegistrationController : DefaultViewController, UserRegistrationProtocol, 
     }
     
     //SubmitProtocol
-    func submitButtonPressed() {
+    func submitButtonPressed(sender: UIButton) {
         callRateServer()
         
     }
     
     //SubmitProtocol
-    func cancelButtonPressed() {
+    func cancelButtonPressed(sender: UIButton) {
     
     }
     

@@ -42,6 +42,10 @@
 		EBB15E7D1B5EB5B20083D71C /* URIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB15E7C1B5EB5B20083D71C /* URIBuilder.swift */; };
 		EBB15E801B5EB7680083D71C /* UserRequestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB15E7F1B5EB7680083D71C /* UserRequestProcessor.swift */; };
 		EBC404791B66B88F0015B175 /* SubmitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC404781B66B88F0015B175 /* SubmitCell.swift */; };
+		EBEA40CE1B68B3F5007F29C7 /* UserLoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEA40CD1B68B3F5007F29C7 /* UserLoginCell.swift */; };
+		EBEA40D01B68B595007F29C7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEA40CF1B68B595007F29C7 /* LoginController.swift */; };
+		EBEA40D21B68F489007F29C7 /* ForgetPasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEA40D11B68F489007F29C7 /* ForgetPasswordCell.swift */; };
+		EBEA40D41B696E54007F29C7 /* UploadImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEA40D31B696E54007F29C7 /* UploadImageController.swift */; };
 		EBFB323D1B67CA5300B87811 /* button_basic.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFB323B1B67CA5300B87811 /* button_basic.png */; };
 		EBFB323E1B67CA5300B87811 /* button_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFB323C1B67CA5300B87811 /* button_pressed.png */; };
 		EBFB32401B67CC4700B87811 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB323F1B67CC4700B87811 /* UIColorExtension.swift */; };
@@ -110,6 +114,10 @@
 		EBB15E7C1B5EB5B20083D71C /* URIBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URIBuilder.swift; sourceTree = "<group>"; };
 		EBB15E7F1B5EB7680083D71C /* UserRequestProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequestProcessor.swift; sourceTree = "<group>"; };
 		EBC404781B66B88F0015B175 /* SubmitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitCell.swift; sourceTree = "<group>"; };
+		EBEA40CD1B68B3F5007F29C7 /* UserLoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginCell.swift; sourceTree = "<group>"; };
+		EBEA40CF1B68B595007F29C7 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		EBEA40D11B68F489007F29C7 /* ForgetPasswordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordCell.swift; sourceTree = "<group>"; };
+		EBEA40D31B696E54007F29C7 /* UploadImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImageController.swift; sourceTree = "<group>"; };
 		EBFB323B1B67CA5300B87811 /* button_basic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_basic.png; path = Images/button_basic.png; sourceTree = "<group>"; };
 		EBFB323C1B67CA5300B87811 /* button_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_pressed.png; path = Images/button_pressed.png; sourceTree = "<group>"; };
 		EBFB323F1B67CC4700B87811 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -153,6 +161,8 @@
 				EBC404781B66B88F0015B175 /* SubmitCell.swift */,
 				EBFB32431B67D00200B87811 /* HeaderCell.swift */,
 				EBFB32451B67F81800B87811 /* BlankCell.swift */,
+				EBEA40CD1B68B3F5007F29C7 /* UserLoginCell.swift */,
+				EBEA40D11B68F489007F29C7 /* ForgetPasswordCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -193,6 +203,8 @@
 				EBA3A7C11B5D7280005B865C /* ViewController.swift */,
 				EB1DD89B1B64E74E00979A5B /* DefaultViewController.swift */,
 				EB1DD8991B64DB5500979A5B /* RegistrationController.swift */,
+				EBEA40CF1B68B595007F29C7 /* LoginController.swift */,
+				EBEA40D31B696E54007F29C7 /* UploadImageController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -456,11 +468,13 @@
 				EB8DB9411B62FC0C008C4031 /* GetRandomUserBridge.swift in Sources */,
 				EB43199F1B62C94E00E3E5B3 /* ImageRequestProcessor.swift in Sources */,
 				EB1DD89F1B64E9EF00979A5B /* UserRegistrationCell.swift in Sources */,
+				EBEA40D41B696E54007F29C7 /* UploadImageController.swift in Sources */,
 				EB50075E1B60380800DB482B /* UserResponseProcessor.swift in Sources */,
 				EB1DD8A51B6519E600979A5B /* UIElementCreationUtil.swift in Sources */,
 				EB8DB93B1B62FBB7008C4031 /* UserUpdateBridge.swift in Sources */,
 				EB1DD89A1B64DB5500979A5B /* RegistrationController.swift in Sources */,
 				EB8DB9431B62FC50008C4031 /* ImageUploadBridge.swift in Sources */,
+				EBEA40D01B68B595007F29C7 /* LoginController.swift in Sources */,
 				EBB15E801B5EB7680083D71C /* UserRequestProcessor.swift in Sources */,
 				EB8DB93F1B62FBF9008C4031 /* RateUserBridge.swift in Sources */,
 				EBA3A7E11B5D7321005B865C /* ConnectionManager.swift in Sources */,
@@ -471,6 +485,7 @@
 				EB8DB9371B62F90B008C4031 /* ImageEndpointBridge.swift in Sources */,
 				EBC404791B66B88F0015B175 /* SubmitCell.swift in Sources */,
 				EBB15E761B5EAC780083D71C /* IRequestProcessor.swift in Sources */,
+				EBEA40D21B68F489007F29C7 /* ForgetPasswordCell.swift in Sources */,
 				EBA3A7EA1B5D952E005B865C /* ResponseData.swift in Sources */,
 				EB4A2C221B63B21B0076205E /* NoRequestProcessor.swift in Sources */,
 				EBA3A7C01B5D7280005B865C /* AppDelegate.swift in Sources */,
@@ -480,6 +495,7 @@
 				EB4A2C201B63AF970076205E /* DownloadImageResponseProcessor.swift in Sources */,
 				EBB15E781B5EAE220083D71C /* Image.swift in Sources */,
 				EBB15E7D1B5EB5B20083D71C /* URIBuilder.swift in Sources */,
+				EBEA40CE1B68B3F5007F29C7 /* UserLoginCell.swift in Sources */,
 				EBFB32441B67D00200B87811 /* HeaderCell.swift in Sources */,
 				EBB15E7A1B5EB1170083D71C /* Processable.swift in Sources */,
 			);

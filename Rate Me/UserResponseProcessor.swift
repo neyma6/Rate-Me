@@ -38,6 +38,10 @@ class UserResponseProcessor : ResponseProcessor {
                     userObj.numberOfRates = numberOfRates
                 }
                 
+                if let isFaceBookUser = user["facebookUser"] as? Bool {
+                    userObj.facebookUser = isFaceBookUser
+                }
+                
                 response.processable = userObj
             }
             

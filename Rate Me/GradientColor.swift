@@ -15,8 +15,8 @@ class GradientColor {
     
     let gl: CAGradientLayer
     
-    init(firstGradient: String, secondGradient: String) {
-        colorTop = UIColor(rgba: firstGradient).CGColor
+    init(firstGradient: String, secondGradient: String, alpha: CGFloat) {
+        colorTop = UIColor(rgba: firstGradient).colorWithAlphaComponent(alpha).CGColor
         colorBottom = UIColor(rgba: secondGradient).CGColor
         gl = CAGradientLayer()
         gl.colors = [ colorTop, colorBottom]

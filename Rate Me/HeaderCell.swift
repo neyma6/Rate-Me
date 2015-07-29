@@ -23,10 +23,11 @@ class HeaderCell : UITableViewCell {
         self.frame = CGRectMake(0, 0, mainWindowBounds.width, HeaderCell.CELL_HEIGHT)
         self.backgroundColor = UIColor.clearColor()
         
-        headerTitle = UIElementCreationUtil.createUILabel(CGRectMake(HeaderCell.OFFSET, self.frame.height / 2 - HeaderCell.HEADER_TITLE_HEIGHT / 2, self.frame.width - 2 * HeaderCell.OFFSET, HeaderCell.HEADER_TITLE_HEIGHT), labelText: "Registration")
+        headerTitle = UIElementCreationUtil.createUILabel(CGRectMake(HeaderCell.OFFSET, self.frame.height / 2 - HeaderCell.HEADER_TITLE_HEIGHT / 2, self.frame.width - 2 * HeaderCell.OFFSET, HeaderCell.HEADER_TITLE_HEIGHT), labelText: title)
         
         headerTitle.textAlignment = NSTextAlignment.Center
         headerTitle.font = UIFont.systemFontOfSize(22)
+        headerTitle.textColor = UIColor.whiteColor()
         
         self.addSubview(headerTitle)
     }

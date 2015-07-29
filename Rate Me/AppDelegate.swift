@@ -19,10 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        var registrationController = RegistrationController()
+        var controller = UploadImageController()
         
-        window?.rootViewController = registrationController
-        window?.backgroundColor = UIColor.whiteColor()
+        window?.rootViewController = controller
+        window?.backgroundColor = UIColor.clearColor()
+        
+        
+        /*let gradientMain = GradientColor(firstGradient: "#DBDDDE", secondGradient: "#898C90")
+        var backgroundLayerMain = gradientMain.gl
+        backgroundLayerMain.frame = UIScreen.mainScreen().bounds
+        window?.layer.insertSublayer(backgroundLayerMain, atIndex: 0)*/
+        
         window?.makeKeyAndVisible()
         
         return true
