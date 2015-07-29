@@ -15,8 +15,9 @@ class UploadImageController : DefaultViewController, SubmitProtocol, UIImagePick
     var cameraUI:UIImagePickerController = UIImagePickerController()
     
     override func viewDidLoad() {
-        cells.append(BlankCell(height: 200, imageNeeds: false))
+        cells.append(BlankCell(height: 20, imageNeeds: false))
         cells.append(HeaderCell(title: "Upload Image"))
+        cells.append(ImageViewCell())
         cells.append(SubmitCell(delegate: self, submitButtonLabel: "Choose photo", cancelButtonLabel: nil))
 
         super.viewDidLoad()

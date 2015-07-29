@@ -25,6 +25,8 @@
 		EB8DB9411B62FC0C008C4031 /* GetRandomUserBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8DB9401B62FC0C008C4031 /* GetRandomUserBridge.swift */; };
 		EB8DB9431B62FC50008C4031 /* ImageUploadBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8DB9421B62FC50008C4031 /* ImageUploadBridge.swift */; };
 		EB8DB9451B62FC7D008C4031 /* ImageDownloadBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8DB9441B62FC7D008C4031 /* ImageDownloadBridge.swift */; };
+		EB8F344B1B6975FF00ADD647 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8F344A1B6975FF00ADD647 /* ImageViewCell.swift */; };
+		EB8F344D1B69771800ADD647 /* question_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = EB8F344C1B69771800ADD647 /* question_mark.png */; };
 		EBA3A7C01B5D7280005B865C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3A7BF1B5D7280005B865C /* AppDelegate.swift */; };
 		EBA3A7C21B5D7280005B865C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3A7C11B5D7280005B865C /* ViewController.swift */; };
 		EBA3A7C51B5D7280005B865C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA3A7C31B5D7280005B865C /* Main.storyboard */; };
@@ -93,6 +95,8 @@
 		EB8DB9401B62FC0C008C4031 /* GetRandomUserBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRandomUserBridge.swift; sourceTree = "<group>"; };
 		EB8DB9421B62FC50008C4031 /* ImageUploadBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploadBridge.swift; sourceTree = "<group>"; };
 		EB8DB9441B62FC7D008C4031 /* ImageDownloadBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadBridge.swift; sourceTree = "<group>"; };
+		EB8F344A1B6975FF00ADD647 /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
+		EB8F344C1B69771800ADD647 /* question_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = question_mark.png; path = Images/question_mark.png; sourceTree = "<group>"; };
 		EBA3A7BA1B5D7280005B865C /* Rate Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rate Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA3A7BE1B5D7280005B865C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBA3A7BF1B5D7280005B865C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 		EB1DD89D1B64E90500979A5B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				EB8F344A1B6975FF00ADD647 /* ImageViewCell.swift */,
 				EB1DD89E1B64E9EF00979A5B /* UserRegistrationCell.swift */,
 				EBC404781B66B88F0015B175 /* SubmitCell.swift */,
 				EBFB32431B67D00200B87811 /* HeaderCell.swift */,
@@ -331,6 +336,7 @@
 		EBFB32361B67C66E00B87811 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EB8F344C1B69771800ADD647 /* question_mark.png */,
 				EBFB32551B681B8D00B87811 /* email_logo_red.png */,
 				EBFB32561B681B8D00B87811 /* name_logo_red.png */,
 				EBFB32571B681B8D00B87811 /* password_logo_red.png */,
@@ -438,6 +444,7 @@
 				EBFB32541B68188200B87811 /* password_logo_nop.png in Resources */,
 				EBFB323E1B67CA5300B87811 /* button_pressed.png in Resources */,
 				EBFB324D1B68105F00B87811 /* name_logo.png in Resources */,
+				EB8F344D1B69771800ADD647 /* question_mark.png in Resources */,
 				EBA3A7CA1B5D7280005B865C /* LaunchScreen.xib in Resources */,
 				EBFB32481B67FBA200B87811 /* logo.png in Resources */,
 				EBFB32521B68188200B87811 /* email_logo_nop.png in Resources */,
@@ -488,6 +495,7 @@
 				EBEA40D21B68F489007F29C7 /* ForgetPasswordCell.swift in Sources */,
 				EBA3A7EA1B5D952E005B865C /* ResponseData.swift in Sources */,
 				EB4A2C221B63B21B0076205E /* NoRequestProcessor.swift in Sources */,
+				EB8F344B1B6975FF00ADD647 /* ImageViewCell.swift in Sources */,
 				EBA3A7C01B5D7280005B865C /* AppDelegate.swift in Sources */,
 				EB1DD89C1B64E74E00979A5B /* DefaultViewController.swift in Sources */,
 				EBB15E701B5EA3C60083D71C /* User.swift in Sources */,
