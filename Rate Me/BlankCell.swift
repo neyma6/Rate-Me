@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 class BlankCell : UITableViewCell {
-
-    var logoView: UIImageView!
     
     init(height: CGFloat, imageNeeds: Bool) {
         super.init(style: UITableViewCellStyle.Default, reuseIdentifier: "")
@@ -21,7 +19,7 @@ class BlankCell : UITableViewCell {
         
         if (imageNeeds) {
             var image = UIImage(named: "logo.png")
-            logoView = UIImageView(image: image)
+            var logoView = UIImageView(image: image)
         
             var ratio = height / image!.size.height * 0.9
         

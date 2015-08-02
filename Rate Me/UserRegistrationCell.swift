@@ -18,10 +18,6 @@ class UserRegistrationCell : UITableViewCell, UITextFieldDelegate {
     static let SPACE_BETWEEN_ELEMENTS: CGFloat = 10
     static let CELL_HEIGHT: CGFloat = 210
     
-    var idLogo: UIImageView!
-    var passwordLogo: UIImageView!
-    var nameLogo: UIImageView!
-    
     var userIdTextField: CustomTextField!
     var userPasswordTextField: CustomTextField!
     var userNameTextField: CustomTextField!
@@ -34,7 +30,7 @@ class UserRegistrationCell : UITableViewCell, UITextFieldDelegate {
         self.backgroundColor = UIColor.clearColor()
         
         var idImage = UIImage(named: "email_logo_red.png")
-        idLogo = UIImageView(image: idImage)
+        var idLogo = UIImageView(image: idImage)
         idLogo.frame = CGRectMake(UserRegistrationCell.X_START, UserRegistrationCell.Y_START, UserRegistrationCell.ELEMENT_HEIGHT, UserRegistrationCell.ELEMENT_HEIGHT)
         
         userIdTextField = UIElementCreationUtil.createTextField(
@@ -42,7 +38,7 @@ class UserRegistrationCell : UITableViewCell, UITextFieldDelegate {
             placeholder: "Add your email address", delegate: self, isPasswordField: false)
         
         var passwordImage = UIImage(named: "password_logo_red.png")
-        passwordLogo = UIImageView(image: passwordImage)
+        var passwordLogo = UIImageView(image: passwordImage)
         passwordLogo.frame = CGRectMake(UserRegistrationCell.X_START, userIdTextField.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT + UserRegistrationCell.SPACE_BETWEEN_ELEMENTS, UserRegistrationCell.ELEMENT_HEIGHT, UserRegistrationCell.ELEMENT_HEIGHT)
         
         
@@ -52,7 +48,7 @@ class UserRegistrationCell : UITableViewCell, UITextFieldDelegate {
         
         
         var nameImage = UIImage(named: "name_logo_red.png")
-        nameLogo = UIImageView(image: nameImage)
+        var nameLogo = UIImageView(image: nameImage)
         nameLogo.frame = CGRectMake(UserRegistrationCell.X_START, userPasswordTextField.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT + UserRegistrationCell.SPACE_BETWEEN_ELEMENTS, UserRegistrationCell.ELEMENT_HEIGHT, UserRegistrationCell.ELEMENT_HEIGHT)
         
         userNameTextField = UIElementCreationUtil.createTextField(

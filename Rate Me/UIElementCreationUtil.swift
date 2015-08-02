@@ -48,4 +48,17 @@ class UIElementCreationUtil {
         button.setImage(UIImage(named: "button_pressed.png"), forState: UIControlState.Highlighted|UIControlState.Selected)
         return button
     }
+    
+    class func createSystemUIButton(frame: CGRect, buttonLabel: String, target: AnyObject, action: Selector) ->UIButton {
+        
+        var button   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+        button.frame = frame
+        button.backgroundColor = UIColor.clearColor()
+        button.setTitle(buttonLabel, forState: UIControlState.Normal)
+        button.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        button.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
+        button.titleLabel!.font = UIFont.systemFontOfSize(14)
+        
+        return button
+    }
 }

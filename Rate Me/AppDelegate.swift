@@ -19,9 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        var controller = UploadImageController()
-        
-        window?.rootViewController = controller
+        window?.rootViewController = LoginController()
         window?.backgroundColor = UIColor.clearColor()
         
         

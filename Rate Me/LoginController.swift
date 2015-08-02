@@ -9,14 +9,15 @@
 import Foundation
 import UIKit
 
-class LoginController : DefaultViewController, SubmitProtocol, UserLoginProtocol {
+class LoginController : DefaultViewController, SubmitProtocol, UserLoginProtocol, ForgetPasswordCellProtocol, SignUpHereCellProtocol {
 
     override func viewDidLoad() {
         cells.append(BlankCell(height: determineBlankCellSize(), imageNeeds: true))
         cells.append(HeaderCell(title: "Login"))
         cells.append(UserLoginCell())
         cells.append(SubmitCell(delegate: self, submitButtonLabel: "Login", cancelButtonLabel: nil))
-        cells.append(ForgetPasswordCell())
+        cells.append(ForgetPasswordCell(delegate: self))
+        cells.append(SignUpHereCell(delegate: self))
         super.viewDidLoad()
     }
     
@@ -38,6 +39,11 @@ class LoginController : DefaultViewController, SubmitProtocol, UserLoginProtocol
         
     }
     
+    //ForgetPasswordCellProtocol
+    func forgetPasswordButtonPressed() {
+    
+    }
+    
     //UserLoginProtocol
     func userLoginResponseReceived(responseData: ResponseData) {
         responseData.toString()
@@ -45,8 +51,28 @@ class LoginController : DefaultViewController, SubmitProtocol, UserLoginProtocol
     
     //UserLoginProtocol
     func userLoginErrorReceived(error: NSError?) {
-    
+        println("error")
     }
+    
+    //SignUpHereCellProtocol
+    func signUpHerePressed() {
+        println("push")
+        //self.presentViewController(RegistrationController(), animated: true, completion: nil)
+        
+        var secondViewController = RegistrationController()
+        
+        secondViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        let window = UIApplication.sharedApplication().windows[0] as! UIWindow
+        UIView.transitionFromView(
+            window.rootViewController!.view,
+            toView: secondViewController.view,
+            duration: 0.65,
+            options: .TransitionCrossDissolve,
+            completion: {
+                finished in window.rootViewController = secondViewController
+        })
+    }
+    
     
     func callServer() {
         var loginCell = cells[2] as! UserLoginCell

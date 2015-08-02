@@ -14,7 +14,6 @@ class HeaderCell : UITableViewCell {
     static let CELL_HEIGHT: CGFloat = 40
     static let OFFSET: CGFloat = 20
     static let HEADER_TITLE_HEIGHT: CGFloat = 30
-    var headerTitle: UILabel!
     
     init(title: String) {
         super.init(style: UITableViewCellStyle.Default, reuseIdentifier: "")
@@ -23,7 +22,7 @@ class HeaderCell : UITableViewCell {
         self.frame = CGRectMake(0, 0, mainWindowBounds.width, HeaderCell.CELL_HEIGHT)
         self.backgroundColor = UIColor.clearColor()
         
-        headerTitle = UIElementCreationUtil.createUILabel(CGRectMake(HeaderCell.OFFSET, self.frame.height / 2 - HeaderCell.HEADER_TITLE_HEIGHT / 2, self.frame.width - 2 * HeaderCell.OFFSET, HeaderCell.HEADER_TITLE_HEIGHT), labelText: title)
+        var headerTitle = UIElementCreationUtil.createUILabel(CGRectMake(HeaderCell.OFFSET, self.frame.height / 2 - HeaderCell.HEADER_TITLE_HEIGHT / 2, self.frame.width - 2 * HeaderCell.OFFSET, HeaderCell.HEADER_TITLE_HEIGHT), labelText: title)
         
         headerTitle.textAlignment = NSTextAlignment.Center
         headerTitle.font = UIFont.systemFontOfSize(22)

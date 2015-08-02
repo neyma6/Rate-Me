@@ -18,9 +18,6 @@ class UserLoginCell : UITableViewCell, UITextFieldDelegate {
     static let SPACE_BETWEEN_ELEMENTS: CGFloat = 10
     static let CELL_HEIGHT: CGFloat = 150
     
-    var idLogo: UIImageView!
-    var passwordLogo: UIImageView!
-    
     var userIdTextField: CustomTextField!
     var userPasswordTextField: CustomTextField!
 
@@ -32,7 +29,7 @@ class UserLoginCell : UITableViewCell, UITextFieldDelegate {
         self.backgroundColor = UIColor.clearColor()
         
         var idImage = UIImage(named: "email_logo_red.png")
-        idLogo = UIImageView(image: idImage)
+        var idLogo = UIImageView(image: idImage)
         idLogo.frame = CGRectMake(UserLoginCell.X_START, UserLoginCell.Y_START, UserLoginCell.ELEMENT_HEIGHT, UserLoginCell.ELEMENT_HEIGHT)
         
         userIdTextField = UIElementCreationUtil.createTextField(
@@ -40,7 +37,7 @@ class UserLoginCell : UITableViewCell, UITextFieldDelegate {
             placeholder: "Enter your email address", delegate: self, isPasswordField: false)
         
         var passwordImage = UIImage(named: "password_logo_red.png")
-        passwordLogo = UIImageView(image: passwordImage)
+        var passwordLogo = UIImageView(image: passwordImage)
         passwordLogo.frame = CGRectMake(UserLoginCell.X_START, userIdTextField.frame.origin.y + UserLoginCell.ELEMENT_HEIGHT + UserLoginCell.SPACE_BETWEEN_ELEMENTS, UserLoginCell.ELEMENT_HEIGHT, UserLoginCell.ELEMENT_HEIGHT)
         
         

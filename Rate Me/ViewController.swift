@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController_shit: UIViewController {
 
     var counter: Int = 0
     

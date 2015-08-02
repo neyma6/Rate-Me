@@ -44,6 +44,7 @@
 		EBB15E7D1B5EB5B20083D71C /* URIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB15E7C1B5EB5B20083D71C /* URIBuilder.swift */; };
 		EBB15E801B5EB7680083D71C /* UserRequestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB15E7F1B5EB7680083D71C /* UserRequestProcessor.swift */; };
 		EBC404791B66B88F0015B175 /* SubmitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC404781B66B88F0015B175 /* SubmitCell.swift */; };
+		EBD95F981B6E4CD100118669 /* SignUpHereCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD95F971B6E4CD100118669 /* SignUpHereCell.swift */; };
 		EBEA40CE1B68B3F5007F29C7 /* UserLoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEA40CD1B68B3F5007F29C7 /* UserLoginCell.swift */; };
 		EBEA40D01B68B595007F29C7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEA40CF1B68B595007F29C7 /* LoginController.swift */; };
 		EBEA40D21B68F489007F29C7 /* ForgetPasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEA40D11B68F489007F29C7 /* ForgetPasswordCell.swift */; };
@@ -118,6 +119,7 @@
 		EBB15E7C1B5EB5B20083D71C /* URIBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URIBuilder.swift; sourceTree = "<group>"; };
 		EBB15E7F1B5EB7680083D71C /* UserRequestProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequestProcessor.swift; sourceTree = "<group>"; };
 		EBC404781B66B88F0015B175 /* SubmitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitCell.swift; sourceTree = "<group>"; };
+		EBD95F971B6E4CD100118669 /* SignUpHereCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpHereCell.swift; sourceTree = "<group>"; };
 		EBEA40CD1B68B3F5007F29C7 /* UserLoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginCell.swift; sourceTree = "<group>"; };
 		EBEA40CF1B68B595007F29C7 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		EBEA40D11B68F489007F29C7 /* ForgetPasswordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordCell.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				EBFB32451B67F81800B87811 /* BlankCell.swift */,
 				EBEA40CD1B68B3F5007F29C7 /* UserLoginCell.swift */,
 				EBEA40D11B68F489007F29C7 /* ForgetPasswordCell.swift */,
+				EBD95F971B6E4CD100118669 /* SignUpHereCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				EBEA40D01B68B595007F29C7 /* LoginController.swift in Sources */,
 				EBB15E801B5EB7680083D71C /* UserRequestProcessor.swift in Sources */,
 				EB8DB93F1B62FBF9008C4031 /* RateUserBridge.swift in Sources */,
+				EBD95F981B6E4CD100118669 /* SignUpHereCell.swift in Sources */,
 				EBA3A7E11B5D7321005B865C /* ConnectionManager.swift in Sources */,
 				EBFB32461B67F81800B87811 /* BlankCell.swift in Sources */,
 				EBB15E741B5EA93C0083D71C /* ResponseProcessor.swift in Sources */,
