@@ -64,6 +64,16 @@ class SlideOutController : UIViewController {
             
             self.centerViewController.view.frame.origin.x = self.centerViewController.view.frame.origin.x + diff!
             
+            if (self.centerViewController.view.frame.origin.x < self.view.frame.origin.x) {
+                self.centerViewController.view.frame.origin.x = 0
+            }
+            
+            var threshold = self.view.frame.width * 0.4
+            
+            if (self.centerViewController.view.frame.origin.x > threshold) {
+                self.centerViewController.view.frame.origin.x = threshold
+            }
+            
             startTouchPoint = touchLocation
             
         case UIGestureRecognizerState.Ended:
