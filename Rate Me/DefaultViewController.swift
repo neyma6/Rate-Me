@@ -17,7 +17,8 @@ class DefaultViewController : UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.frame = UIScreen.mainScreen().bounds
-        self.view.backgroundColor = UIColor.clearColor()
+        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.userInteractionEnabled = true
         
         /*let gradientMain = GradientColor(firstGradient: "#DBDDDE", secondGradient: "#898C90")
         var backgroundLayerMain = gradientMain.gl
@@ -34,6 +35,8 @@ class DefaultViewController : UIViewController, UITableViewDataSource, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = false
+        tableView.userInteractionEnabled = true
+        tableView.backgroundColor = UIColor.whiteColor()
         
         let gradientTable = GradientColor(firstGradient: "#FF5E3A", secondGradient: "#FFDB4C", alpha: 1)
         var backgroundLayerTable = gradientTable.gl

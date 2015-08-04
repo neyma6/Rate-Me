@@ -45,6 +45,8 @@ class UserLoginCell : UITableViewCell, UITextFieldDelegate {
             CGRectMake(UserLoginCell.X_START + UserLoginCell.ELEMENT_HEIGHT, userIdTextField.frame.origin.y + UserLoginCell.ELEMENT_HEIGHT + UserLoginCell.SPACE_BETWEEN_ELEMENTS, mainWindowBounds.width - UserLoginCell.OFFSET - UserLoginCell.ELEMENT_HEIGHT, UserLoginCell.ELEMENT_HEIGHT),
             placeholder: "Enter your password", delegate: self, isPasswordField: true)
         
+        self.userInteractionEnabled = true
+        
         self.addSubview(idLogo)
         self.addSubview(userIdTextField)
         self.addSubview(passwordLogo)

@@ -37,6 +37,8 @@ class SignUpHereCell : UITableViewCell {
         
         var button = UIElementCreationUtil.createSystemUIButton(CGRectMake(frame.width / 2 - SignUpHereCell.BUTTON_WIDTH / 2, frame.height / 2, SignUpHereCell.BUTTON_WIDTH, SignUpHereCell.BUTTON_HEIGHT), buttonLabel: "Sign up here!", target: self, action: "buttonPressed:")
         
+        self.userInteractionEnabled = true
+        
         self.addSubview(label)
         self.addSubview(button)
     }

@@ -18,6 +18,8 @@ class LoginController : DefaultViewController, SubmitProtocol, UserLoginProtocol
         cells.append(SubmitCell(delegate: self, submitButtonLabel: "Login", cancelButtonLabel: nil))
         cells.append(ForgetPasswordCell(delegate: self))
         cells.append(SignUpHereCell(delegate: self))
+        
+        self.view.userInteractionEnabled = true
         super.viewDidLoad()
     }
     
@@ -56,20 +58,19 @@ class LoginController : DefaultViewController, SubmitProtocol, UserLoginProtocol
     
     //SignUpHereCellProtocol
     func signUpHerePressed() {
-        println("push")
-        //self.presentViewController(RegistrationController(), animated: true, completion: nil)
         
-        var secondViewController = RegistrationController()
+        var registrationController = RegistrationController()
         
-        secondViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         let window = UIApplication.sharedApplication().windows[0] as! UIWindow
+        var animationOptions = UIViewAnimationOptions.TransitionFlipFromRight | UIViewAnimationOptions.AllowAnimatedContent
+        
         UIView.transitionFromView(
-            window.rootViewController!.view,
-            toView: secondViewController.view,
+            self.view,
+            toView: registrationController.view,
             duration: 0.65,
-            options: .TransitionCrossDissolve,
+            options: animationOptions,
             completion: {
-                finished in window.rootViewController = secondViewController
+                finished in window.rootViewController = registrationController
         })
     }
     

@@ -55,6 +55,8 @@ class UserRegistrationCell : UITableViewCell, UITextFieldDelegate {
             CGRectMake(UserRegistrationCell.X_START + UserRegistrationCell.ELEMENT_HEIGHT, userPasswordTextField.frame.origin.y + UserRegistrationCell.ELEMENT_HEIGHT + UserRegistrationCell.SPACE_BETWEEN_ELEMENTS, mainWindowBounds.width - UserRegistrationCell.OFFSET - UserRegistrationCell.ELEMENT_HEIGHT, UserRegistrationCell.ELEMENT_HEIGHT),
             placeholder: "Enter your name", delegate: self, isPasswordField: false)
         
+        self.userInteractionEnabled = true
+        
         self.addSubview(idLogo)
         self.addSubview(userIdTextField)
         self.addSubview(passwordLogo)

@@ -30,6 +30,8 @@ class ForgetPasswordCell : UITableViewCell {
         
         var button = UIElementCreationUtil.createSystemUIButton(CGRectMake(frame.width / 2 - ForgetPasswordCell.BUTTON_WIDTH / 2, frame.height / 2 - ForgetPasswordCell.BUTTON_HEIGHT / 2, ForgetPasswordCell.BUTTON_WIDTH, ForgetPasswordCell.BUTTON_HEIGHT), buttonLabel: "Forget Password?", target: self, action: "buttonPressed:")
         
+        self.userInteractionEnabled = true
+        
         self.addSubview(button)
 
     }

@@ -27,6 +27,8 @@ class ImageViewCell : UITableViewCell {
         userImageView = UIImageView(image: image)
         userImageView.frame = CGRectMake(frame.width / 2 - ImageViewCell.IMAGE_SIZE / 2, frame.height / 2 - ImageViewCell.IMAGE_SIZE / 2 , ImageViewCell.IMAGE_SIZE, ImageViewCell.IMAGE_SIZE)
         
+        self.userInteractionEnabled = true
+        
         self.addSubview(userImageView)
     }
 

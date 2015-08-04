@@ -51,6 +51,8 @@ class SubmitCell : UITableViewCell {
         
         submitButtom = UIElementCreationUtil.createUIButton(submitButtonRect, buttonLabel: submitButtonLabel, target: self, action: "buttonPressed:")
         
+        self.userInteractionEnabled = true
+        
         self.addSubview(submitButtom!)
 
     }

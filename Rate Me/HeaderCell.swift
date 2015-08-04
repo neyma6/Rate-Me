@@ -28,6 +28,8 @@ class HeaderCell : UITableViewCell {
         headerTitle.font = UIFont.systemFontOfSize(22)
         headerTitle.textColor = UIColor.whiteColor()
         
+        self.userInteractionEnabled = true
+        
         self.addSubview(headerTitle)
     }
 

@@ -16,6 +16,7 @@ class BlankCell : UITableViewCell {
         var mainWindowBounds = UIScreen.mainScreen().bounds
         self.frame = CGRectMake(0, 0, mainWindowBounds.width, height)
         self.backgroundColor = UIColor.clearColor()
+        self.userInteractionEnabled = true
         
         if (imageNeeds) {
             var image = UIImage(named: "logo.png")
@@ -27,6 +28,8 @@ class BlankCell : UITableViewCell {
             var imageHeight = image!.size.height * ratio
             logoView.frame = CGRectMake(self.frame.width / 2 - imageWidth / 2, self.frame.height / 2 - imageHeight / 2, imageWidth, imageHeight)
         
+            self.userInteractionEnabled = true
+            
             self.addSubview(logoView)
         }
     }
