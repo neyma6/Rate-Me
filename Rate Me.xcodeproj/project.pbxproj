@@ -27,6 +27,9 @@
 		EB8DB9451B62FC7D008C4031 /* ImageDownloadBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8DB9441B62FC7D008C4031 /* ImageDownloadBridge.swift */; };
 		EB8F344B1B6975FF00ADD647 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8F344A1B6975FF00ADD647 /* ImageViewCell.swift */; };
 		EB8F344D1B69771800ADD647 /* question_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = EB8F344C1B69771800ADD647 /* question_mark.png */; };
+		EB989BAE1B720B23003EE3A6 /* SlideOutMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB989BAD1B720B23003EE3A6 /* SlideOutMenuBar.swift */; };
+		EB989BB01B7210E3003EE3A6 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB989BAF1B7210E3003EE3A6 /* ViewControllerExtension.swift */; };
+		EB989BB21B7214D5003EE3A6 /* home_logo_red.png in Resources */ = {isa = PBXBuildFile; fileRef = EB989BB11B7214D5003EE3A6 /* home_logo_red.png */; };
 		EBA3A7C01B5D7280005B865C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3A7BF1B5D7280005B865C /* AppDelegate.swift */; };
 		EBA3A7C21B5D7280005B865C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3A7C11B5D7280005B865C /* ViewController.swift */; };
 		EBA3A7C71B5D7280005B865C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA3A7C61B5D7280005B865C /* Images.xcassets */; };
@@ -99,6 +102,9 @@
 		EB8DB9441B62FC7D008C4031 /* ImageDownloadBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadBridge.swift; sourceTree = "<group>"; };
 		EB8F344A1B6975FF00ADD647 /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		EB8F344C1B69771800ADD647 /* question_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = question_mark.png; path = Images/question_mark.png; sourceTree = "<group>"; };
+		EB989BAD1B720B23003EE3A6 /* SlideOutMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideOutMenuBar.swift; sourceTree = "<group>"; };
+		EB989BAF1B7210E3003EE3A6 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		EB989BB11B7214D5003EE3A6 /* home_logo_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home_logo_red.png; path = Images/home_logo_red.png; sourceTree = "<group>"; };
 		EBA3A7BA1B5D7280005B865C /* Rate Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rate Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA3A7BE1B5D7280005B865C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBA3A7BF1B5D7280005B865C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				EB1DD8A11B65175200979A5B /* CustomTextField.swift */,
+				EB989BAD1B720B23003EE3A6 /* SlideOutMenuBar.swift */,
 			);
 			name = Element;
 			sourceTree = "<group>";
@@ -191,6 +198,7 @@
 				EB1DD8A41B6519E600979A5B /* UIElementCreationUtil.swift */,
 				EBFB323F1B67CC4700B87811 /* UIColorExtension.swift */,
 				EBFB32411B67CCD100B87811 /* GradientColor.swift */,
+				EB989BAF1B7210E3003EE3A6 /* ViewControllerExtension.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -342,6 +350,7 @@
 		EBFB32361B67C66E00B87811 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EB989BB11B7214D5003EE3A6 /* home_logo_red.png */,
 				EB8F344C1B69771800ADD647 /* question_mark.png */,
 				EBFB32551B681B8D00B87811 /* email_logo_red.png */,
 				EBFB32561B681B8D00B87811 /* name_logo_red.png */,
@@ -446,6 +455,7 @@
 				EBFB325A1B681B8D00B87811 /* password_logo_red.png in Resources */,
 				EBFB323D1B67CA5300B87811 /* button_basic.png in Resources */,
 				EBD95F9C1B6E588200118669 /* Main.storyboard in Resources */,
+				EB989BB21B7214D5003EE3A6 /* home_logo_red.png in Resources */,
 				EBFB324E1B68105F00B87811 /* password_logo.png in Resources */,
 				EBFB32541B68188200B87811 /* password_logo_nop.png in Resources */,
 				EBFB323E1B67CA5300B87811 /* button_pressed.png in Resources */,
@@ -486,6 +496,7 @@
 				EB1DD8A51B6519E600979A5B /* UIElementCreationUtil.swift in Sources */,
 				EB8DB93B1B62FBB7008C4031 /* UserUpdateBridge.swift in Sources */,
 				EB1DD89A1B64DB5500979A5B /* RegistrationController.swift in Sources */,
+				EB989BAE1B720B23003EE3A6 /* SlideOutMenuBar.swift in Sources */,
 				EB8DB9431B62FC50008C4031 /* ImageUploadBridge.swift in Sources */,
 				EBEA40D01B68B595007F29C7 /* LoginController.swift in Sources */,
 				EBB15E801B5EB7680083D71C /* UserRequestProcessor.swift in Sources */,
@@ -508,6 +519,7 @@
 				EB1DD89C1B64E74E00979A5B /* DefaultViewController.swift in Sources */,
 				EBB15E701B5EA3C60083D71C /* User.swift in Sources */,
 				EBFB32421B67CCD100B87811 /* GradientColor.swift in Sources */,
+				EB989BB01B7210E3003EE3A6 /* ViewControllerExtension.swift in Sources */,
 				EB4A2C201B63AF970076205E /* DownloadImageResponseProcessor.swift in Sources */,
 				EBB15E781B5EAE220083D71C /* Image.swift in Sources */,
 				EBB15E7D1B5EB5B20083D71C /* URIBuilder.swift in Sources */,

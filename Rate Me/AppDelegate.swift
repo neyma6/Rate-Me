@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = slideOut
         window?.backgroundColor = UIColor.clearColor()
         
-        
+        application.statusBarHidden = true
         /*let gradientMain = GradientColor(firstGradient: "#DBDDDE", secondGradient: "#898C90")
         var backgroundLayerMain = gradientMain.gl
         backgroundLayerMain.frame = UIScreen.mainScreen().bounds

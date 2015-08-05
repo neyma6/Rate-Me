@@ -44,12 +44,12 @@ class SubmitCell : UITableViewCell {
             
             var cancelButtonRect = CGRectMake(self.frame.width / 2 + SubmitCell.SPACE_BETWEEN_BUTTONS, SubmitCell.CELL_HEIGHT / 2 - SubmitCell.BUTTON_HEIGHT / 2, SubmitCell.BUTTON_WIDTH, SubmitCell.BUTTON_HEIGHT)
             
-            cancelButtom = UIElementCreationUtil.createUIButton(cancelButtonRect, buttonLabel: cancelButtonLabel!, target: self, action: "buttonPressed:")
+            cancelButtom = UIElementCreationUtil.createUIButton(cancelButtonRect, buttonLabel: cancelButtonLabel!, target: self, action: "buttonPressed:", imageName: "button_basic.png")
             
             self.addSubview(cancelButtom!)
         }
         
-        submitButtom = UIElementCreationUtil.createUIButton(submitButtonRect, buttonLabel: submitButtonLabel, target: self, action: "buttonPressed:")
+        submitButtom = UIElementCreationUtil.createUIButton(submitButtonRect, buttonLabel: submitButtonLabel, target: self, action: "buttonPressed:", imageName: "button_basic.png")
         
         self.userInteractionEnabled = true
         

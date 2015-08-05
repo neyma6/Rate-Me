@@ -37,17 +37,18 @@ class UIElementCreationUtil {
         return textField;
     }
     
-    class func createUIButton(frame: CGRect, buttonLabel: String, target: AnyObject, action: Selector) ->UIButton {
+    class func createUIButton(frame: CGRect, buttonLabel: String, target: AnyObject, action: Selector, imageName: String) ->UIButton {
     
         var button   = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         button.frame = frame
         button.backgroundColor = UIColor.clearColor()
         button.setTitle(buttonLabel, forState: UIControlState.Normal)
         button.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
-        button.setBackgroundImage(UIImage(named: "button_basic.png"), forState: UIControlState.Normal)
-        button.setImage(UIImage(named: "button_pressed.png"), forState: UIControlState.Highlighted|UIControlState.Selected)
+        button.setBackgroundImage(UIImage(named: imageName), forState: UIControlState.Normal)
         return button
     }
+    
+    
     
     class func createSystemUIButton(frame: CGRect, buttonLabel: String, target: AnyObject, action: Selector) ->UIButton {
         

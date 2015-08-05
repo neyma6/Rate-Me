@@ -12,7 +12,7 @@ import UIKit
 class LoginController : DefaultViewController, SubmitProtocol, UserLoginProtocol, ForgetPasswordCellProtocol, SignUpHereCellProtocol {
 
     override func viewDidLoad() {
-        cells.append(BlankCell(height: determineBlankCellSize(), imageNeeds: true))
+        cells.append(BlankCell(height: determineBlankCellSize(), imageNeeds: false))
         cells.append(HeaderCell(title: "Login"))
         cells.append(UserLoginCell())
         cells.append(SubmitCell(delegate: self, submitButtonLabel: "Login", cancelButtonLabel: nil))

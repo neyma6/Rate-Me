@@ -9,20 +9,23 @@
 import Foundation
 import UIKit
 
-class SlideOutController : UIViewController {
+class SlideOutController : UIViewController, SlideOutMenuBarProtocol {
 
+    static let MENU_BAR_HEIGHT: CGFloat = 50
+    
     var centerViewController: UIViewController!
     var leftSlideController: UIViewController!
+    var slideOutMenuBar: SlideOutMenuBar!
     
     var startTouchPoint: CGPoint?
     var diff: CGFloat?
+    var threshold: CGFloat!
     
     init(centerViewController: UIViewController, leftSlideController: UIViewController) {
         super.init(nibName: nil, bundle: nil)
         self.centerViewController = centerViewController
         self.leftSlideController = leftSlideController
-        self.centerViewController.view.userInteractionEnabled = true
-        self.view.userInteractionEnabled = true
+        self.threshold = self.view.frame.width * 0.4
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -35,11 +38,13 @@ class SlideOutController : UIViewController {
         self.view.backgroundColor = UIColor.whiteColor()
         
         self.view.frame = UIScreen.mainScreen().bounds
-        centerViewController.view.frame = UIScreen.mainScreen().bounds
+        var mainBounds = UIScreen.mainScreen().bounds
+        centerViewController.view.frame = CGRectMake(0, SlideOutController.MENU_BAR_HEIGHT, mainBounds.width, mainBounds.height - SlideOutController.MENU_BAR_HEIGHT)
         
-        self.view.addSubview(leftSlideController.view)
+        slideOutMenuBar = SlideOutMenuBar(frame: CGRectMake(0, 0, self.view.frame.width, SlideOutController.MENU_BAR_HEIGHT), delegate: self)
+        self.view.addSubview(slideOutMenuBar)
+        //self.view.addSubview(leftSlideController.view)
         self.view.addSubview(centerViewController.view)
-        
         
         
         let gestureRecognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
@@ -53,25 +58,23 @@ class SlideOutController : UIViewController {
             startTouchPoint = gestureRecognizer.locationInView(self.centerViewController.view)
             diff = 0
             
-            println("s \(startTouchPoint)")
-            
         case UIGestureRecognizerState.Changed:
             var touchLocation = gestureRecognizer.locationInView(self.centerViewController.view)
 
             diff = (touchLocation.x + diff!) - startTouchPoint!.x
             
-            println("c \(touchLocation) \(startTouchPoint) \(diff)")
-            
             self.centerViewController.view.frame.origin.x = self.centerViewController.view.frame.origin.x + diff!
+            self.slideOutMenuBar.frame.origin.x = self.slideOutMenuBar.frame.origin.x + diff!
             
             if (self.centerViewController.view.frame.origin.x < self.view.frame.origin.x) {
                 self.centerViewController.view.frame.origin.x = 0
+                self.slideOutMenuBar.frame.origin.x = 0
             }
             
-            var threshold = self.view.frame.width * 0.4
             
             if (self.centerViewController.view.frame.origin.x > threshold) {
                 self.centerViewController.view.frame.origin.x = threshold
+                self.slideOutMenuBar.frame.origin.x = threshold
             }
             
             startTouchPoint = touchLocation
@@ -79,47 +82,36 @@ class SlideOutController : UIViewController {
         case UIGestureRecognizerState.Ended:
             var touchLocation = gestureRecognizer.locationInView(self.centerViewController.view)
 
-            println("ended \(touchLocation)")
+            var centerViewX = self.centerViewController.view.frame.origin.x
+            
+            var endX: CGFloat = 0
+            if (centerViewX > threshold / 2) {
+                endX = threshold
+            }
+            
+            animateMovement(endX)
+            
         default: break
         }
     }
     
-    /*override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        println("touchesBegan")
-        let touch = touches.first as! UITouch
-        let tapCount = touch.tapCount
-        
-        let point = touch.locationInView(centerViewController.view)
-
-        println("begin: \(point)")
-        
-        super.touchesBegan(touches, withEvent: event);
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-        let touch = touches.first as! UITouch
-        let tapCount = touch.tapCount
-        
-        let point = touch.locationInView(centerViewController.view)
-        
-        println("move: \(point)")
-        
-        super.touchesMoved(touches, withEvent: event);
+    //SlideOutMenuBarProtocol
+    func homeButtonPressed() {
+        if (self.centerViewController.view.frame.origin.x == 0) {
+            animateMovement(threshold)
+        } else {
+            animateMovement(0)
+        }
     }
     
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
-        let touch = touches.first as! UITouch
-        let tapCount = touch.tapCount
-        
-        let point = touch.locationInView(centerViewController.view)
-        
-        println("end: \(point)")
-        
-        super.touchesEnded(touches, withEvent: event);
+    func animateMovement(endX: CGFloat) {
+        UIView.animateWithDuration(0.5, animations: {
+            self.centerViewController.view.frame.origin.x = endX
+            self.slideOutMenuBar.frame.origin.x = endX
+        })
     }
-    
-    override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
-        println("cancelled")
-    }*/
-    
 }
