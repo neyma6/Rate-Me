@@ -12,6 +12,7 @@ import UIKit
 class SlideOutController : UIViewController, SlideOutMenuBarProtocol {
 
     static let MENU_BAR_HEIGHT: CGFloat = 50
+    static let THRESHOLD: CGFloat = 0.4
     
     var centerViewController: UIViewController!
     var leftSlideController: UIViewController!
@@ -25,7 +26,7 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol {
         super.init(nibName: nil, bundle: nil)
         self.centerViewController = centerViewController
         self.leftSlideController = leftSlideController
-        self.threshold = self.view.frame.width * 0.4
+        self.threshold = self.view.frame.width * SlideOutController.THRESHOLD
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -42,8 +43,9 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol {
         centerViewController.view.frame = CGRectMake(0, SlideOutController.MENU_BAR_HEIGHT, mainBounds.width, mainBounds.height - SlideOutController.MENU_BAR_HEIGHT)
         
         slideOutMenuBar = SlideOutMenuBar(frame: CGRectMake(0, 0, self.view.frame.width, SlideOutController.MENU_BAR_HEIGHT), delegate: self)
+        
+        self.view.addSubview(leftSlideController.view)
         self.view.addSubview(slideOutMenuBar)
-        //self.view.addSubview(leftSlideController.view)
         self.view.addSubview(centerViewController.view)
         
         
@@ -107,6 +109,7 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol {
             animateMovement(0)
         }
     }
+    
     
     func animateMovement(endX: CGFloat) {
         UIView.animateWithDuration(0.5, animations: {

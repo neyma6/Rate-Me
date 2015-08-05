@@ -16,7 +16,7 @@ protocol ForgetPasswordCellProtocol {
 class ForgetPasswordCell : UITableViewCell {
 
     static let CELL_HEIGHT: CGFloat = 30
-    static let BUTTON_WIDTH: CGFloat = 120
+    static let BUTTON_WIDTH: CGFloat = 150
     static let BUTTON_HEIGHT: CGFloat = 20
     
     var delegate: ForgetPasswordCellProtocol!

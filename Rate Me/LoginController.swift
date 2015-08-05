@@ -33,7 +33,16 @@ class LoginController : DefaultViewController, SubmitProtocol, UserLoginProtocol
     
     //SubmitProtocol
     func submitButtonPressed(sender: UIButton) {
-        callServer()
+        var loginCell = cells[2] as! UserLoginCell
+        var id = loginCell.userIdTextField.text
+        var password = loginCell.userPasswordTextField.text
+        
+        if (id.isEmpty || password.isEmpty) {
+            showAlertMessage("Please add your email and your password!")
+            
+        } else {
+            callServer(id, password: password)
+        }
     }
     
     //SubmitProtocol
@@ -75,10 +84,7 @@ class LoginController : DefaultViewController, SubmitProtocol, UserLoginProtocol
     }
     
     
-    func callServer() {
-        var loginCell = cells[2] as! UserLoginCell
-        var id = loginCell.userIdTextField.text
-        var password = loginCell.userPasswordTextField.text
+    func callServer(id: String, password: String) {
         
         var user = User(userId: id)
         user.password = password
@@ -89,4 +95,5 @@ class LoginController : DefaultViewController, SubmitProtocol, UserLoginProtocol
         
         connection.synchonousRequest(request)
     }
+    
 }

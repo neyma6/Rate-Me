@@ -13,17 +13,13 @@ class DefaultViewController : UIViewController, UITableViewDataSource, UITableVi
 
     var tableView: UITableView!
     var cells = Array<UITableViewCell>()
+    var upperGradient: String = "#FF5E3A"
+    var lowerGradient: String = "#FF9500"
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.frame = UIScreen.mainScreen().bounds
+        super.viewDidLoad()        
         self.view.backgroundColor = UIColor.whiteColor()
         self.view.userInteractionEnabled = true
-        
-        /*let gradientMain = GradientColor(firstGradient: "#DBDDDE", secondGradient: "#898C90")
-        var backgroundLayerMain = gradientMain.gl
-        backgroundLayerMain.frame = self.view.frame
-        self.view.layer.insertSublayer(backgroundLayerMain, atIndex: 0)*/
         
         createTableView()
     }
@@ -38,7 +34,7 @@ class DefaultViewController : UIViewController, UITableViewDataSource, UITableVi
         tableView.userInteractionEnabled = true
         tableView.backgroundColor = UIColor.whiteColor()
         
-        let gradientTable = GradientColor(firstGradient: "#FF5E3A", secondGradient: "#FFDB4C", alpha: 1)
+        let gradientTable = GradientColor(firstGradient: upperGradient, secondGradient: lowerGradient, alpha: 1)
         var backgroundLayerTable = gradientTable.gl
         backgroundLayerTable.frame = tableView.frame
         tableView.layer.insertSublayer(backgroundLayerTable, atIndex: 0)
@@ -56,6 +52,14 @@ class DefaultViewController : UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return cells[indexPath.row].frame.height;
+    }
+    
+    
+    func showAlertMessage(message: String) {
+        var alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        
+        self.view.window?.rootViewController!.presentViewController(alert, animated: true, completion: nil)
     }
     
 }

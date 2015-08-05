@@ -30,6 +30,12 @@
 		EB989BAE1B720B23003EE3A6 /* SlideOutMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB989BAD1B720B23003EE3A6 /* SlideOutMenuBar.swift */; };
 		EB989BB01B7210E3003EE3A6 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB989BAF1B7210E3003EE3A6 /* ViewControllerExtension.swift */; };
 		EB989BB21B7214D5003EE3A6 /* home_logo_red.png in Resources */ = {isa = PBXBuildFile; fileRef = EB989BB11B7214D5003EE3A6 /* home_logo_red.png */; };
+		EB989BB61B725A86003EE3A6 /* SideNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB989BB51B725A86003EE3A6 /* SideNavigationController.swift */; };
+		EB989BB91B72683F003EE3A6 /* SideNavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB989BB81B72683F003EE3A6 /* SideNavigationCell.swift */; };
+		EB989BBB1B728885003EE3A6 /* others_logo_red.png in Resources */ = {isa = PBXBuildFile; fileRef = EB989BBA1B728885003EE3A6 /* others_logo_red.png */; };
+		EB989BBD1B728EF6003EE3A6 /* settings_logo_red.png in Resources */ = {isa = PBXBuildFile; fileRef = EB989BBC1B728EF6003EE3A6 /* settings_logo_red.png */; };
+		EB989BBF1B72903D003EE3A6 /* camera_logo_red.png in Resources */ = {isa = PBXBuildFile; fileRef = EB989BBE1B72903D003EE3A6 /* camera_logo_red.png */; };
+		EB989BC11B7290D8003EE3A6 /* logout_logo_red.png in Resources */ = {isa = PBXBuildFile; fileRef = EB989BC01B7290D8003EE3A6 /* logout_logo_red.png */; };
 		EBA3A7C01B5D7280005B865C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3A7BF1B5D7280005B865C /* AppDelegate.swift */; };
 		EBA3A7C21B5D7280005B865C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3A7C11B5D7280005B865C /* ViewController.swift */; };
 		EBA3A7C71B5D7280005B865C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA3A7C61B5D7280005B865C /* Images.xcassets */; };
@@ -105,6 +111,12 @@
 		EB989BAD1B720B23003EE3A6 /* SlideOutMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideOutMenuBar.swift; sourceTree = "<group>"; };
 		EB989BAF1B7210E3003EE3A6 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		EB989BB11B7214D5003EE3A6 /* home_logo_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home_logo_red.png; path = Images/home_logo_red.png; sourceTree = "<group>"; };
+		EB989BB51B725A86003EE3A6 /* SideNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideNavigationController.swift; sourceTree = "<group>"; };
+		EB989BB81B72683F003EE3A6 /* SideNavigationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideNavigationCell.swift; sourceTree = "<group>"; };
+		EB989BBA1B728885003EE3A6 /* others_logo_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = others_logo_red.png; path = Images/others_logo_red.png; sourceTree = "<group>"; };
+		EB989BBC1B728EF6003EE3A6 /* settings_logo_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings_logo_red.png; path = Images/settings_logo_red.png; sourceTree = "<group>"; };
+		EB989BBE1B72903D003EE3A6 /* camera_logo_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_logo_red.png; path = Images/camera_logo_red.png; sourceTree = "<group>"; };
+		EB989BC01B7290D8003EE3A6 /* logout_logo_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logout_logo_red.png; path = Images/logout_logo_red.png; sourceTree = "<group>"; };
 		EBA3A7BA1B5D7280005B865C /* Rate Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rate Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA3A7BE1B5D7280005B865C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBA3A7BF1B5D7280005B865C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +191,7 @@
 				EBEA40CD1B68B3F5007F29C7 /* UserLoginCell.swift */,
 				EBEA40D11B68F489007F29C7 /* ForgetPasswordCell.swift */,
 				EBD95F971B6E4CD100118669 /* SignUpHereCell.swift */,
+				EB989BB81B72683F003EE3A6 /* SideNavigationCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -224,6 +237,7 @@
 				EBEA40CF1B68B595007F29C7 /* LoginController.swift */,
 				EBEA40D31B696E54007F29C7 /* UploadImageController.swift */,
 				EBD95F9D1B6EB88700118669 /* SlideOutController.swift */,
+				EB989BB51B725A86003EE3A6 /* SideNavigationController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -350,6 +364,10 @@
 		EBFB32361B67C66E00B87811 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EB989BC01B7290D8003EE3A6 /* logout_logo_red.png */,
+				EB989BBE1B72903D003EE3A6 /* camera_logo_red.png */,
+				EB989BBC1B728EF6003EE3A6 /* settings_logo_red.png */,
+				EB989BBA1B728885003EE3A6 /* others_logo_red.png */,
 				EB989BB11B7214D5003EE3A6 /* home_logo_red.png */,
 				EB8F344C1B69771800ADD647 /* question_mark.png */,
 				EBFB32551B681B8D00B87811 /* email_logo_red.png */,
@@ -448,9 +466,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB989BBB1B728885003EE3A6 /* others_logo_red.png in Resources */,
 				EBFB32581B681B8D00B87811 /* email_logo_red.png in Resources */,
 				EBFB32531B68188200B87811 /* name_logo_nop.png in Resources */,
 				EBFB324C1B68105F00B87811 /* email_logo.png in Resources */,
+				EB989BC11B7290D8003EE3A6 /* logout_logo_red.png in Resources */,
 				EBFB32591B681B8D00B87811 /* name_logo_red.png in Resources */,
 				EBFB325A1B681B8D00B87811 /* password_logo_red.png in Resources */,
 				EBFB323D1B67CA5300B87811 /* button_basic.png in Resources */,
@@ -460,12 +480,14 @@
 				EBFB32541B68188200B87811 /* password_logo_nop.png in Resources */,
 				EBFB323E1B67CA5300B87811 /* button_pressed.png in Resources */,
 				EBFB324D1B68105F00B87811 /* name_logo.png in Resources */,
+				EB989BBF1B72903D003EE3A6 /* camera_logo_red.png in Resources */,
 				EB8F344D1B69771800ADD647 /* question_mark.png in Resources */,
 				EBFB32481B67FBA200B87811 /* logo.png in Resources */,
 				EBD95F9B1B6E588200118669 /* LaunchScreen.xib in Resources */,
 				EBFB32521B68188200B87811 /* email_logo_nop.png in Resources */,
 				EBA3A7C71B5D7280005B865C /* Images.xcassets in Resources */,
 				EB4319A31B62DA2E00E3E5B3 /* test.jpg in Resources */,
+				EB989BBD1B728EF6003EE3A6 /* settings_logo_red.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +527,7 @@
 				EBD95F981B6E4CD100118669 /* SignUpHereCell.swift in Sources */,
 				EBA3A7E11B5D7321005B865C /* ConnectionManager.swift in Sources */,
 				EBFB32461B67F81800B87811 /* BlankCell.swift in Sources */,
+				EB989BB61B725A86003EE3A6 /* SideNavigationController.swift in Sources */,
 				EBB15E741B5EA93C0083D71C /* ResponseProcessor.swift in Sources */,
 				EBFB32401B67CC4700B87811 /* UIColorExtension.swift in Sources */,
 				EB8DB93D1B62FBD3008C4031 /* UserLoginBridge.swift in Sources */,
@@ -517,6 +540,7 @@
 				EB8F344B1B6975FF00ADD647 /* ImageViewCell.swift in Sources */,
 				EBA3A7C01B5D7280005B865C /* AppDelegate.swift in Sources */,
 				EB1DD89C1B64E74E00979A5B /* DefaultViewController.swift in Sources */,
+				EB989BB91B72683F003EE3A6 /* SideNavigationCell.swift in Sources */,
 				EBB15E701B5EA3C60083D71C /* User.swift in Sources */,
 				EBFB32421B67CCD100B87811 /* GradientColor.swift in Sources */,
 				EB989BB01B7210E3003EE3A6 /* ViewControllerExtension.swift in Sources */,

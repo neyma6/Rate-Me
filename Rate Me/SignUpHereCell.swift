@@ -34,6 +34,7 @@ class SignUpHereCell : UITableViewCell {
         var label = UIElementCreationUtil.createUILabel(CGRectMake(frame.width / 2 - SignUpHereCell.LABEL_WIDTH / 2, SignUpHereCell.CELL_HEIGHT / 2 - SignUpHereCell.LABEL_HEIGHT, SignUpHereCell.LABEL_WIDTH, SignUpHereCell.LABEL_HEIGHT), labelText: "Don't you have an account?")
         label.textColor = UIColor.whiteColor()
         label.textAlignment = NSTextAlignment.Center
+        label.font = UIFont.systemFontOfSize(15)
         
         var button = UIElementCreationUtil.createSystemUIButton(CGRectMake(frame.width / 2 - SignUpHereCell.BUTTON_WIDTH / 2, frame.height / 2, SignUpHereCell.BUTTON_WIDTH, SignUpHereCell.BUTTON_HEIGHT), buttonLabel: "Sign up here!", target: self, action: "buttonPressed:")
         

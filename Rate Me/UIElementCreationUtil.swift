@@ -58,7 +58,7 @@ class UIElementCreationUtil {
         button.setTitle(buttonLabel, forState: UIControlState.Normal)
         button.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
         button.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
-        button.titleLabel!.font = UIFont.systemFontOfSize(14)
+        button.titleLabel!.font = UIFont.systemFontOfSize(15)
         
         return button
     }
