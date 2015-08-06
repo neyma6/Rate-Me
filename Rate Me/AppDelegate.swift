@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        var slideOut = SlideOutController(centerViewController: LoginController(), leftSlideController: SideNavigationController())
+        var slideOut = SlideOutController(centerViewController: LoginController())
         
         window?.rootViewController = slideOut
         window?.backgroundColor = UIColor.clearColor()

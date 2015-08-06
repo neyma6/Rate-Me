@@ -191,7 +191,6 @@
 				EBEA40CD1B68B3F5007F29C7 /* UserLoginCell.swift */,
 				EBEA40D11B68F489007F29C7 /* ForgetPasswordCell.swift */,
 				EBD95F971B6E4CD100118669 /* SignUpHereCell.swift */,
-				EB989BB81B72683F003EE3A6 /* SideNavigationCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -200,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				EB1DD8A11B65175200979A5B /* CustomTextField.swift */,
-				EB989BAD1B720B23003EE3A6 /* SlideOutMenuBar.swift */,
 			);
 			name = Element;
 			sourceTree = "<group>";
@@ -228,18 +226,44 @@
 		EB4A2C1E1B63AB790076205E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EB81D4EF1B7342B60080FEC0 /* Controller */,
+				EB81D4ED1B73423F0080FEC0 /* SideNavigation */,
 				EB1DD8A31B6519C300979A5B /* Util */,
 				EB1DD8A01B65174100979A5B /* Element */,
 				EB1DD89D1B64E90500979A5B /* Cell */,
-				EBA3A7C11B5D7280005B865C /* ViewController.swift */,
 				EB1DD89B1B64E74E00979A5B /* DefaultViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		EB81D4ED1B73423F0080FEC0 /* SideNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				EB989BAD1B720B23003EE3A6 /* SlideOutMenuBar.swift */,
+				EBD95F9D1B6EB88700118669 /* SlideOutController.swift */,
+				EB989BB51B725A86003EE3A6 /* SideNavigationController.swift */,
+				EB81D4EE1B7342560080FEC0 /* Cell */,
+			);
+			name = SideNavigation;
+			sourceTree = "<group>";
+		};
+		EB81D4EE1B7342560080FEC0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EB989BB81B72683F003EE3A6 /* SideNavigationCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		EB81D4EF1B7342B60080FEC0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EBA3A7C11B5D7280005B865C /* ViewController.swift */,
 				EB1DD8991B64DB5500979A5B /* RegistrationController.swift */,
 				EBEA40CF1B68B595007F29C7 /* LoginController.swift */,
 				EBEA40D31B696E54007F29C7 /* UploadImageController.swift */,
-				EBD95F9D1B6EB88700118669 /* SlideOutController.swift */,
-				EB989BB51B725A86003EE3A6 /* SideNavigationController.swift */,
 			);
-			name = ViewController;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		EB8DB9351B62F8D6008C4031 /* ResponseHandler */ = {

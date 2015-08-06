@@ -22,10 +22,10 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol {
     var diff: CGFloat?
     var threshold: CGFloat!
     
-    init(centerViewController: UIViewController, leftSlideController: UIViewController) {
+    init(centerViewController: UIViewController) {
         super.init(nibName: nil, bundle: nil)
         self.centerViewController = centerViewController
-        self.leftSlideController = leftSlideController
+        self.leftSlideController = SideNavigationController()
         self.threshold = self.view.frame.width * SlideOutController.THRESHOLD
     }
 
