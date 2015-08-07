@@ -7,3 +7,25 @@
 //
 
 import Foundation
+
+protocol ImageUploadProtocol {
+    func imageUploadResponseReceived(response: ResponseData)
+    func imageUploadErrorReceived(error: NSError?)
+}
+
+class ImageUploadBridge : ConnectionManagerBridgeProtol {
+    
+    var delegate: ImageUploadProtocol!
+    
+    init(delegate: ImageUploadProtocol) {
+        self.delegate = delegate
+    }
+    
+    func responseReceived(responseData: ResponseData) {
+        delegate.imageUploadResponseReceived(responseData)
+    }
+    
+    func errorReceived(error: NSError?) {
+        delegate.imageUploadErrorReceived(error)
+    }
+}

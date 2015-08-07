@@ -9,31 +9,25 @@
 import Foundation
 import UIKit
 
+protocol ImageDownloadProtocol {
+    func imageDownloadResponseReceived(response: ResponseData)
+    func imageDownloadErrorReceived(error: NSError?)
+}
+
 class ImageDownloadBridge : ConnectionManagerBridgeProtol {
 
-    func responseReceived(responseData: ResponseData) {
+    var delegate: ImageDownloadProtocol!
     
-        if (responseData.status == "success") {
-            println("success")
-        } else {
-            println("unsuccessful")
-
-        }
-        
-        if let imageObj = responseData.processable as! Image? {
-            if (imageObj.image != nil) {
-                println("image downloaded")
-                
-                let documentsPath = "/Users/neyma"
-                let destinationPath = documentsPath.stringByAppendingPathComponent("downloaded.jpg")
-                UIImageJPEGRepresentation(imageObj.image,1.0).writeToFile(destinationPath, atomically: true)
-            } else {
-                println("image download failed")
-            }
-        }
+    init(delegate: ImageDownloadProtocol) {
+        self.delegate = delegate
+    }
+    
+    func responseReceived(responseData: ResponseData) {
+        delegate.imageDownloadResponseReceived(responseData)
     }
     
     
     func errorReceived(error: NSError?) {
+        delegate.imageDownloadErrorReceived(error)
     }
 }

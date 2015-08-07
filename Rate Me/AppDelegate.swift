@@ -19,9 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        var slideOut = SlideOutController(centerViewController: LoginController())
+        //var slideOut = SlideOutController(centerViewController: LoginController())
+        var user = User(userId: "t@t.com")
+        user.name = "John Snow"
+        user.password = "t"
+        user.facebookUser = false
+        user.numberOfRates = 124
+        user.rateValue = 450
+        user.imageUrl = "http://lh3.googleusercontent.com/VxBIQjnEgYbpq-kmvws3o_jpci3NYWj57vFuoKTRQF_1zavY6InfBZ1PKCoc-N6l5ltvO4AhNCFZDdYEpV5sGC4"
         
-        window?.rootViewController = slideOut
+        var controller = SlideOutController(centerViewController: ProfileController(currentUser: user, profilePicture: nil), currentUser: user)
+        
+        //var controller = UploadImageController()
+        
+        window?.rootViewController = controller
         window?.backgroundColor = UIColor.clearColor()
         
         application.statusBarHidden = true

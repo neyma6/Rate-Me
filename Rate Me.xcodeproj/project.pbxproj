@@ -17,6 +17,8 @@
 		EB4A2C201B63AF970076205E /* DownloadImageResponseProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A2C1F1B63AF970076205E /* DownloadImageResponseProcessor.swift */; };
 		EB4A2C221B63B21B0076205E /* NoRequestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A2C211B63B21B0076205E /* NoRequestProcessor.swift */; };
 		EB50075E1B60380800DB482B /* UserResponseProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB50075D1B60380800DB482B /* UserResponseProcessor.swift */; };
+		EB81D4F11B7362710080FEC0 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB81D4F01B7362710080FEC0 /* Regex.swift */; };
+		EB81D4F31B7379B20080FEC0 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB81D4F21B7379B20080FEC0 /* ProfileController.swift */; };
 		EB8DB9371B62F90B008C4031 /* ImageEndpointBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8DB9361B62F90B008C4031 /* ImageEndpointBridge.swift */; };
 		EB8DB9391B62FBAD008C4031 /* UserRegistrationBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8DB9381B62FBAD008C4031 /* UserRegistrationBridge.swift */; };
 		EB8DB93B1B62FBB7008C4031 /* UserUpdateBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8DB93A1B62FBB7008C4031 /* UserUpdateBridge.swift */; };
@@ -28,7 +30,7 @@
 		EB8F344B1B6975FF00ADD647 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8F344A1B6975FF00ADD647 /* ImageViewCell.swift */; };
 		EB8F344D1B69771800ADD647 /* question_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = EB8F344C1B69771800ADD647 /* question_mark.png */; };
 		EB989BAE1B720B23003EE3A6 /* SlideOutMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB989BAD1B720B23003EE3A6 /* SlideOutMenuBar.swift */; };
-		EB989BB01B7210E3003EE3A6 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB989BAF1B7210E3003EE3A6 /* ViewControllerExtension.swift */; };
+		EB989BB01B7210E3003EE3A6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB989BAF1B7210E3003EE3A6 /* Extensions.swift */; };
 		EB989BB21B7214D5003EE3A6 /* home_logo_red.png in Resources */ = {isa = PBXBuildFile; fileRef = EB989BB11B7214D5003EE3A6 /* home_logo_red.png */; };
 		EB989BB61B725A86003EE3A6 /* SideNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB989BB51B725A86003EE3A6 /* SideNavigationController.swift */; };
 		EB989BB91B72683F003EE3A6 /* SideNavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB989BB81B72683F003EE3A6 /* SideNavigationCell.swift */; };
@@ -50,6 +52,8 @@
 		EBB15E7A1B5EB1170083D71C /* Processable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB15E791B5EB1170083D71C /* Processable.swift */; };
 		EBB15E7D1B5EB5B20083D71C /* URIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB15E7C1B5EB5B20083D71C /* URIBuilder.swift */; };
 		EBB15E801B5EB7680083D71C /* UserRequestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB15E7F1B5EB7680083D71C /* UserRequestProcessor.swift */; };
+		EBBC8D8C1B74B0F500A0E637 /* HttpConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC8D8B1B74B0F500A0E637 /* HttpConfig.swift */; };
+		EBBC8D8E1B74DC5800A0E637 /* UIImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC8D8D1B74DC5800A0E637 /* UIImageHelper.swift */; };
 		EBC404791B66B88F0015B175 /* SubmitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC404781B66B88F0015B175 /* SubmitCell.swift */; };
 		EBD95F981B6E4CD100118669 /* SignUpHereCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD95F971B6E4CD100118669 /* SignUpHereCell.swift */; };
 		EBD95F9B1B6E588200118669 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBD95F991B6E588200118669 /* LaunchScreen.xib */; };
@@ -98,6 +102,8 @@
 		EB4A2C1F1B63AF970076205E /* DownloadImageResponseProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadImageResponseProcessor.swift; sourceTree = "<group>"; };
 		EB4A2C211B63B21B0076205E /* NoRequestProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoRequestProcessor.swift; sourceTree = "<group>"; };
 		EB50075D1B60380800DB482B /* UserResponseProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserResponseProcessor.swift; sourceTree = "<group>"; };
+		EB81D4F01B7362710080FEC0 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		EB81D4F21B7379B20080FEC0 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		EB8DB9361B62F90B008C4031 /* ImageEndpointBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageEndpointBridge.swift; sourceTree = "<group>"; };
 		EB8DB9381B62FBAD008C4031 /* UserRegistrationBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegistrationBridge.swift; sourceTree = "<group>"; };
 		EB8DB93A1B62FBB7008C4031 /* UserUpdateBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserUpdateBridge.swift; sourceTree = "<group>"; };
@@ -109,7 +115,7 @@
 		EB8F344A1B6975FF00ADD647 /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		EB8F344C1B69771800ADD647 /* question_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = question_mark.png; path = Images/question_mark.png; sourceTree = "<group>"; };
 		EB989BAD1B720B23003EE3A6 /* SlideOutMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideOutMenuBar.swift; sourceTree = "<group>"; };
-		EB989BAF1B7210E3003EE3A6 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		EB989BAF1B7210E3003EE3A6 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EB989BB11B7214D5003EE3A6 /* home_logo_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home_logo_red.png; path = Images/home_logo_red.png; sourceTree = "<group>"; };
 		EB989BB51B725A86003EE3A6 /* SideNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideNavigationController.swift; sourceTree = "<group>"; };
 		EB989BB81B72683F003EE3A6 /* SideNavigationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideNavigationCell.swift; sourceTree = "<group>"; };
@@ -135,6 +141,8 @@
 		EBB15E791B5EB1170083D71C /* Processable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Processable.swift; sourceTree = "<group>"; };
 		EBB15E7C1B5EB5B20083D71C /* URIBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URIBuilder.swift; sourceTree = "<group>"; };
 		EBB15E7F1B5EB7680083D71C /* UserRequestProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequestProcessor.swift; sourceTree = "<group>"; };
+		EBBC8D8B1B74B0F500A0E637 /* HttpConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpConfig.swift; sourceTree = "<group>"; };
+		EBBC8D8D1B74DC5800A0E637 /* UIImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageHelper.swift; sourceTree = "<group>"; };
 		EBC404781B66B88F0015B175 /* SubmitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitCell.swift; sourceTree = "<group>"; };
 		EBD95F971B6E4CD100118669 /* SignUpHereCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpHereCell.swift; sourceTree = "<group>"; };
 		EBD95F991B6E588200118669 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -209,7 +217,9 @@
 				EB1DD8A41B6519E600979A5B /* UIElementCreationUtil.swift */,
 				EBFB323F1B67CC4700B87811 /* UIColorExtension.swift */,
 				EBFB32411B67CCD100B87811 /* GradientColor.swift */,
-				EB989BAF1B7210E3003EE3A6 /* ViewControllerExtension.swift */,
+				EB989BAF1B7210E3003EE3A6 /* Extensions.swift */,
+				EB81D4F01B7362710080FEC0 /* Regex.swift */,
+				EBBC8D8D1B74DC5800A0E637 /* UIImageHelper.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -262,6 +272,7 @@
 				EB1DD8991B64DB5500979A5B /* RegistrationController.swift */,
 				EBEA40CF1B68B595007F29C7 /* LoginController.swift */,
 				EBEA40D31B696E54007F29C7 /* UploadImageController.swift */,
+				EB81D4F21B7379B20080FEC0 /* ProfileController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -349,6 +360,7 @@
 				EBB15E731B5EA93C0083D71C /* ResponseProcessor.swift */,
 				EBB15E751B5EAC780083D71C /* IRequestProcessor.swift */,
 				EBB15E7C1B5EB5B20083D71C /* URIBuilder.swift */,
+				EBBC8D8B1B74B0F500A0E637 /* HttpConfig.swift */,
 			);
 			name = Http;
 			sourceTree = "<group>";
@@ -530,6 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB1DD8A21B65175200979A5B /* CustomTextField.swift in Sources */,
+				EBBC8D8C1B74B0F500A0E637 /* HttpConfig.swift in Sources */,
 				EB8DB9391B62FBAD008C4031 /* UserRegistrationBridge.swift in Sources */,
 				EBA3A7C21B5D7280005B865C /* ViewController.swift in Sources */,
 				EB8DB9451B62FC7D008C4031 /* ImageDownloadBridge.swift in Sources */,
@@ -549,6 +562,7 @@
 				EB8DB93F1B62FBF9008C4031 /* RateUserBridge.swift in Sources */,
 				EBD95F9E1B6EB88700118669 /* SlideOutController.swift in Sources */,
 				EBD95F981B6E4CD100118669 /* SignUpHereCell.swift in Sources */,
+				EB81D4F31B7379B20080FEC0 /* ProfileController.swift in Sources */,
 				EBA3A7E11B5D7321005B865C /* ConnectionManager.swift in Sources */,
 				EBFB32461B67F81800B87811 /* BlankCell.swift in Sources */,
 				EB989BB61B725A86003EE3A6 /* SideNavigationController.swift in Sources */,
@@ -564,16 +578,18 @@
 				EB8F344B1B6975FF00ADD647 /* ImageViewCell.swift in Sources */,
 				EBA3A7C01B5D7280005B865C /* AppDelegate.swift in Sources */,
 				EB1DD89C1B64E74E00979A5B /* DefaultViewController.swift in Sources */,
+				EB81D4F11B7362710080FEC0 /* Regex.swift in Sources */,
 				EB989BB91B72683F003EE3A6 /* SideNavigationCell.swift in Sources */,
 				EBB15E701B5EA3C60083D71C /* User.swift in Sources */,
 				EBFB32421B67CCD100B87811 /* GradientColor.swift in Sources */,
-				EB989BB01B7210E3003EE3A6 /* ViewControllerExtension.swift in Sources */,
+				EB989BB01B7210E3003EE3A6 /* Extensions.swift in Sources */,
 				EB4A2C201B63AF970076205E /* DownloadImageResponseProcessor.swift in Sources */,
 				EBB15E781B5EAE220083D71C /* Image.swift in Sources */,
 				EBB15E7D1B5EB5B20083D71C /* URIBuilder.swift in Sources */,
 				EBEA40CE1B68B3F5007F29C7 /* UserLoginCell.swift in Sources */,
 				EBFB32441B67D00200B87811 /* HeaderCell.swift in Sources */,
 				EBB15E7A1B5EB1170083D71C /* Processable.swift in Sources */,
+				EBBC8D8E1B74DC5800A0E637 /* UIImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

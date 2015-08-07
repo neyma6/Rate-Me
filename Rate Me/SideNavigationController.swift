@@ -9,8 +9,14 @@
 import Foundation
 import UIKit
 
+protocol SideNavigationControllerProtocol {
+    func menuSelected(index: Int)
+}
+
 class SideNavigationController : DefaultViewController {
 
+    var delegate: SideNavigationControllerProtocol?
+    
     override func viewDidLoad() {
         var mainBounds = UIScreen.mainScreen().bounds
         upperGradient = "#FF9500"
@@ -38,6 +44,8 @@ class SideNavigationController : DefaultViewController {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         selectedCell.contentView.backgroundColor = UIColor.redColor()
+        
+        delegate?.menuSelected(indexPath.row)
     }
     
 }

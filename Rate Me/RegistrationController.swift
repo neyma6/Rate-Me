@@ -21,18 +21,44 @@ class RegistrationController : DefaultViewController, UserRegistrationProtocol, 
     
     //UserRegistrationProtocol
     func userRegistrationResponseReceived(responseData: ResponseData) {
-        responseData.toString()
+        let status = responseData.status
+        
+        if (status == "success") {
+            var user = responseData.processable as! User
+            
+            var imageUploadController = UploadImageController()
+            imageUploadController.currentUser = user
+            transformViewToOtherView(imageUploadController)
+            
+            
+        } else {
+            let error = responseData.error
+            
+            if (error == "user_exists") {
+                showAlertMessage("The user already exists!")
+            } else {
+                showAlertMessage("An error occured, please try again later!")
+            }
+        }
     }
     
     //UserRegistrationProtocol
     func userRegistrationErrorReceived(error: NSError?) {
-        println("error")
+        showAlertMessage("An error occured. Do you have connection to the internet? Please try again later!")
     }
     
     //SubmitProtocol
     func submitButtonPressed(sender: UIButton) {
-        callRateServer()
+        var registrationCell = cells[2] as! UserRegistrationCell
+        var id = registrationCell.userIdTextField.text
+        var password = registrationCell.userPasswordTextField.text
+        var name = registrationCell.userNameTextField.text
         
+        if (id.isEmpty || password.isEmpty || name.isEmpty) {
+            showAlertMessage("Please fill every field before pushing Register button!")
+        } else {
+            callRateServer(id, password: password, name: name)
+        }
     }
     
     //SubmitProtocol
@@ -40,17 +66,13 @@ class RegistrationController : DefaultViewController, UserRegistrationProtocol, 
     
     }
     
-    func callRateServer() {
-        var registrationCell = cells[2] as! UserRegistrationCell
-        var id = registrationCell.userIdTextField.text
-        var password = registrationCell.userPasswordTextField.text
-        var name = registrationCell.userNameTextField.text
+    func callRateServer(id: String, password: String, name: String) {
         
         var user = User(userId: id)
         user.password = password
         user.name = name
         
-        var request = RequestData(domain: "http://rate-server.appspot.com/", endpoint: "user/register", method: "GET", processable: user)
+        var request = RequestData(domain: HttpConfig.ENDPOINT, endpoint: "user/register", method: "GET", processable: user)
         
         var connection = ConnectionManager(delegate: UserRegistrationBridge(delegate: self), requestProcessor: UserRequestProcessor(), responseProcessor: UserResponseProcessor())
         

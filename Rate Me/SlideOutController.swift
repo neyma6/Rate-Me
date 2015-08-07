@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SlideOutController : UIViewController, SlideOutMenuBarProtocol {
+class SlideOutController : UIViewController, SlideOutMenuBarProtocol, SideNavigationControllerProtocol {
 
     static let MENU_BAR_HEIGHT: CGFloat = 50
     static let THRESHOLD: CGFloat = 0.4
@@ -17,16 +17,21 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol {
     var centerViewController: UIViewController!
     var leftSlideController: UIViewController!
     var slideOutMenuBar: SlideOutMenuBar!
-    
+    var gestureRecognizer: UIPanGestureRecognizer!
+    var chosenMenuIndex = 0
+    var currentUser: User!
     var startTouchPoint: CGPoint?
     var diff: CGFloat?
     var threshold: CGFloat!
     
-    init(centerViewController: UIViewController) {
+    init(centerViewController: UIViewController, currentUser: User) {
         super.init(nibName: nil, bundle: nil)
         self.centerViewController = centerViewController
-        self.leftSlideController = SideNavigationController()
+        var sideNav = SideNavigationController()
+        sideNav.delegate = self
+        self.leftSlideController = sideNav
         self.threshold = self.view.frame.width * SlideOutController.THRESHOLD
+        self.currentUser = currentUser
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -48,8 +53,7 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol {
         self.view.addSubview(slideOutMenuBar)
         self.view.addSubview(centerViewController.view)
         
-        
-        let gestureRecognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
+        gestureRecognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
         self.centerViewController.view.addGestureRecognizer(gestureRecognizer)
     }
     
@@ -110,11 +114,55 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol {
         }
     }
     
+    //SideNavigationControllerProtocol
+    func menuSelected(index: Int) {
+        if (index == chosenMenuIndex) {
+            return
+        } else {
+            chosenMenuIndex = index
+            animateMovement(0)
+            
+            
+            var controller: UIViewController?
+            switch(chosenMenuIndex) {
+            case 0:
+                controller = ProfileController(currentUser: currentUser, profilePicture: nil)
+            case 1:
+                controller = RegistrationController()
+            default: break
+            }
+            
+            var mainBounds = UIScreen.mainScreen().bounds
+
+            controller!.view.frame = CGRectMake(0, SlideOutController.MENU_BAR_HEIGHT, mainBounds.width, mainBounds.height - SlideOutController.MENU_BAR_HEIGHT)
+            
+            animateMovementWithControllerChange(0, controller: controller!)
+        }
+    }
+    
     
     func animateMovement(endX: CGFloat) {
         UIView.animateWithDuration(0.5, animations: {
             self.centerViewController.view.frame.origin.x = endX
             self.slideOutMenuBar.frame.origin.x = endX
+        })
+    }
+    
+    func animateMovementWithControllerChange(endX: CGFloat, controller: UIViewController) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            self.centerViewController.view.frame.origin.x = endX
+            self.slideOutMenuBar.frame.origin.x = endX
+            }, completion: {
+            finished in
+                if (finished) {
+                    self.centerViewController.removeFromParentViewController()
+                    self.centerViewController.view.removeFromSuperview()
+                    self.centerViewController = controller
+                    self.centerViewController.view.addGestureRecognizer(self.gestureRecognizer)
+                    self.view.addSubview(self.centerViewController.view)
+                }
+        })
         })
     }
 }

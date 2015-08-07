@@ -13,7 +13,7 @@ class ImageViewCell : UITableViewCell {
     
     
     static let CELL_HEIGHT: CGFloat = 250
-    static let IMAGE_SIZE: CGFloat = 200
+    static let IMAGE_SIZE: CGFloat = 250
     
     var userImageView: UIImageView!
     
@@ -23,9 +23,10 @@ class ImageViewCell : UITableViewCell {
         self.frame = CGRectMake(0, 0, mainWindowBounds.width, ImageViewCell.CELL_HEIGHT)
         self.backgroundColor = UIColor.clearColor()
         
-        var image = UIImage(named: "question_mark.png")
+        var image = UIImage(named: "name_logo_red.png")
+        
         userImageView = UIImageView(image: image)
-        userImageView.frame = CGRectMake(frame.width / 2 - ImageViewCell.IMAGE_SIZE / 2, frame.height / 2 - ImageViewCell.IMAGE_SIZE / 2 , ImageViewCell.IMAGE_SIZE, ImageViewCell.IMAGE_SIZE)
+        userImageView.frame = CGRectMake(frame.width / 2 - ImageViewCell.IMAGE_SIZE / 2, frame.height / 2 - ImageViewCell.IMAGE_SIZE / 2, ImageViewCell.IMAGE_SIZE, ImageViewCell.IMAGE_SIZE)
         
         self.userInteractionEnabled = true
         
@@ -34,5 +35,22 @@ class ImageViewCell : UITableViewCell {
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    func setNewImage(image: UIImage) {
+        userImageView.removeFromSuperview()
+        
+        var scale = image.getScale(ImageViewCell.IMAGE_SIZE)
+        
+        var width = image.size.width * scale
+        var height = image.size.height * scale
+        
+        //self.frame = CGRectMake(0, 0, self.frame.width, height)
+        
+        userImageView.image = image
+        userImageView.frame = CGRectMake(frame.width / 2 - width / 2, frame.height / 2 - height / 2, width, height)
+        
+        
+        self.addSubview(userImageView)
     }
 }

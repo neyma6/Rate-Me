@@ -40,6 +40,8 @@ class LoginController : DefaultViewController, SubmitProtocol, UserLoginProtocol
         if (id.isEmpty || password.isEmpty) {
             showAlertMessage("Please add your email and your password!")
             
+        } else if (!isEmailValid(id)) {
+            showAlertMessage("The email that you entered is not a valid email address!")
         } else {
             callServer(id, password: password)
         }
@@ -57,39 +59,45 @@ class LoginController : DefaultViewController, SubmitProtocol, UserLoginProtocol
     
     //UserLoginProtocol
     func userLoginResponseReceived(responseData: ResponseData) {
-        responseData.toString()
+        
+        let status = responseData.status
+        
+        if (status == "success") {
+            var user = responseData.processable as! User
+            var url: String? = responseData.url
+            
+            if (url == nil) {
+                var imageUploadController = UploadImageController()
+                imageUploadController.currentUser = user
+                transformViewToOtherView(imageUploadController)
+            } else {
+                user.imageUrl = url
+                var mainController = SlideOutController(centerViewController: ProfileController(currentUser: user, profilePicture: nil), currentUser: user)
+                transformViewToOtherView(mainController)
+            }
+      
+            
+        } else {
+            showAlertMessage("Invalid email or password!")
+        }
     }
     
     //UserLoginProtocol
     func userLoginErrorReceived(error: NSError?) {
-        println("error")
+        showAlertMessage("An error occured. Do you have connection to the internet? Please try again later!")
     }
     
     //SignUpHereCellProtocol
     func signUpHerePressed() {
-        
-        var registrationController = RegistrationController()
-        
-        let window = UIApplication.sharedApplication().windows[0] as! UIWindow
-        var animationOptions = UIViewAnimationOptions.TransitionFlipFromRight | UIViewAnimationOptions.AllowAnimatedContent
-        
-        UIView.transitionFromView(
-            self.view,
-            toView: registrationController.view,
-            duration: 0.65,
-            options: animationOptions,
-            completion: {
-                finished in window.rootViewController = registrationController
-        })
+        transformViewToOtherView(RegistrationController())
     }
-    
-    
+
     func callServer(id: String, password: String) {
         
         var user = User(userId: id)
         user.password = password
         
-        var request = RequestData(domain: "http://rate-server.appspot.com/", endpoint: "user/get", method: "GET", processable: user)
+        var request = RequestData(domain: HttpConfig.ENDPOINT, endpoint: "user/get", method: "GET", processable: user)
         
         var connection = ConnectionManager(delegate: UserLoginBridge(delegate: self), requestProcessor: UserRequestProcessor(), responseProcessor: UserResponseProcessor())
         

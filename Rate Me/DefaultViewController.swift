@@ -59,7 +59,24 @@ class DefaultViewController : UIViewController, UITableViewDataSource, UITableVi
         var alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         
-        self.view.window?.rootViewController!.presentViewController(alert, animated: true, completion: nil)
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func isEmailValid(mail: String) ->Bool {
+        return Regex("^[0-9a-z\\.-]+@([0-9a-z-]+\\.)+[a-z]{2,4}$").test(mail)
+    }
+    
+    func transformViewToOtherView(controller: UIViewController) {
+        let window = UIApplication.sharedApplication().windows[0] as! UIWindow
+        var animationOptions = UIViewAnimationOptions.TransitionFlipFromRight | UIViewAnimationOptions.AllowAnimatedContent
+        UIView.transitionFromView(
+            self.view,
+            toView: controller.view,
+            duration: 0.5,
+            options: animationOptions,
+            completion: {
+                finished in window.rootViewController = controller
+        })
     }
     
 }
