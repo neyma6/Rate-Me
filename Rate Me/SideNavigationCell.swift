@@ -33,6 +33,7 @@ class SideNavigationCell : UITableViewCell {
         label.textAlignment = NSTextAlignment.Center
         label.font = UIFont.systemFontOfSize(15)
 
+        self.selectionStyle = UITableViewCellSelectionStyle.None
         
         self.addSubview(label)
     }

@@ -9,7 +9,11 @@
 import Foundation
 import UIKit
 
-class SlideOutController : UIViewController, SlideOutMenuBarProtocol, SideNavigationControllerProtocol {
+protocol CenterControllerCallBackProtocol {
+    func centerControllerShouldBeChanged(menuIndex: Int, user: User, profilePicture: UIImage?)
+}
+
+class SlideOutController : UIViewController, SlideOutMenuBarProtocol, SideNavigationControllerProtocol, ImageDownloadedProtocol, CenterControllerCallBackProtocol {
 
     static let MENU_BAR_HEIGHT: CGFloat = 50
     static let THRESHOLD: CGFloat = 0.4
@@ -20,18 +24,20 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol, SideNaviga
     var gestureRecognizer: UIPanGestureRecognizer!
     var chosenMenuIndex = 0
     var currentUser: User!
+    var profilePicture: UIImage?
     var startTouchPoint: CGPoint?
     var diff: CGFloat?
     var threshold: CGFloat!
     
-    init(centerViewController: UIViewController, currentUser: User) {
+    init(currentUser: User, profilePicture: UIImage?) {
         super.init(nibName: nil, bundle: nil)
-        self.centerViewController = centerViewController
+        self.centerViewController = ProfileController(delegate: self, currentUser: currentUser, profilePicture: profilePicture)
         var sideNav = SideNavigationController()
         sideNav.delegate = self
         self.leftSlideController = sideNav
         self.threshold = self.view.frame.width * SlideOutController.THRESHOLD
         self.currentUser = currentUser
+        self.profilePicture = profilePicture
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -122,24 +128,36 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol, SideNaviga
             chosenMenuIndex = index
             animateMovement(0)
             
+            var controller = selectControllerTypeFromMenuIndex(chosenMenuIndex)
             
-            var controller: UIViewController?
-            switch(chosenMenuIndex) {
-            case 0:
-                controller = ProfileController(currentUser: currentUser, profilePicture: nil)
-            case 1:
-                controller = RegistrationController()
-            default: break
+            if (controller.isKindOfClass(LoginController)) {
+                transformViewToOtherView(controller)
+                return
             }
             
             var mainBounds = UIScreen.mainScreen().bounds
 
-            controller!.view.frame = CGRectMake(0, SlideOutController.MENU_BAR_HEIGHT, mainBounds.width, mainBounds.height - SlideOutController.MENU_BAR_HEIGHT)
+            controller.view.frame = CGRectMake(0, SlideOutController.MENU_BAR_HEIGHT, mainBounds.width, mainBounds.height - SlideOutController.MENU_BAR_HEIGHT)
             
-            animateMovementWithControllerChange(0, controller: controller!)
+            animateMovementWithControllerChange(0, controller: controller)
         }
     }
     
+    //ImageDownloadedProtocol
+    func imageDownloaded(image: UIImage) {
+        self.profilePicture = image
+    }
+    
+    //CenterControllerCallBackProtocol
+    func centerControllerShouldBeChanged(menuIndex: Int, user: User, profilePicture: UIImage?) {
+        currentUser = user
+        if (profilePicture != nil) {
+            self.profilePicture = profilePicture
+        }
+        
+        var controller = selectControllerTypeFromMenuIndex(menuIndex)
+        changeController(controller)
+    }
     
     func animateMovement(endX: CGFloat) {
         UIView.animateWithDuration(0.5, animations: {
@@ -156,13 +174,37 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol, SideNaviga
             }, completion: {
             finished in
                 if (finished) {
-                    self.centerViewController.removeFromParentViewController()
-                    self.centerViewController.view.removeFromSuperview()
-                    self.centerViewController = controller
-                    self.centerViewController.view.addGestureRecognizer(self.gestureRecognizer)
-                    self.view.addSubview(self.centerViewController.view)
+                    self.changeController(controller)
                 }
         })
         })
+    }
+    
+    func changeController(controller: UIViewController) {
+        self.centerViewController.removeFromParentViewController()
+        self.centerViewController.view.removeFromSuperview()
+        self.centerViewController = controller
+        self.centerViewController.view.addGestureRecognizer(self.gestureRecognizer)
+        self.view.addSubview(self.centerViewController.view)
+    }
+    
+    func selectControllerTypeFromMenuIndex(menuIndex: Int) ->UIViewController {
+        var controller: UIViewController?
+        switch(menuIndex) {
+        case 0:
+            controller = ProfileController(delegate: self, currentUser: currentUser, profilePicture: profilePicture)
+        case 1:
+            controller = RegistrationController()
+        case 3:
+            var uploadController = UploadImageController()
+            uploadController.currentUser = currentUser
+            uploadController.delegate = self
+            controller = uploadController
+        case 4:
+            controller = LoginController()
+        default: break
+        }
+        
+        return controller!
     }
 }

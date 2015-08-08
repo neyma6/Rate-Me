@@ -37,3 +37,18 @@ extension UIImage {
         //var newSize = CGSize(width: self.size.width * scale, height: self.size.height * scale)
     }
 }
+
+extension UIViewController {
+    func transformViewToOtherView(controller: UIViewController) {
+        let window = UIApplication.sharedApplication().windows[0] as! UIWindow
+        var animationOptions = UIViewAnimationOptions.TransitionFlipFromRight | UIViewAnimationOptions.AllowAnimatedContent
+        UIView.transitionFromView(
+            self.view,
+            toView: controller.view,
+            duration: 0.5,
+            options: animationOptions,
+            completion: {
+                finished in window.rootViewController = controller
+        })
+    }
+}

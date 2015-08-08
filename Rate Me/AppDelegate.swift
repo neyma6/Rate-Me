@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         user.rateValue = 450
         user.imageUrl = "http://lh3.googleusercontent.com/VxBIQjnEgYbpq-kmvws3o_jpci3NYWj57vFuoKTRQF_1zavY6InfBZ1PKCoc-N6l5ltvO4AhNCFZDdYEpV5sGC4"
         
-        var controller = SlideOutController(centerViewController: ProfileController(currentUser: user, profilePicture: nil), currentUser: user)
+        var controller = SlideOutController(currentUser: user, profilePicture: nil)
         
         //var controller = UploadImageController()
         

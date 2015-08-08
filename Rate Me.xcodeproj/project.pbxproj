@@ -45,6 +45,7 @@
 		EBA3A7E11B5D7321005B865C /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3A7E01B5D7321005B865C /* ConnectionManager.swift */; };
 		EBA3A7E51B5D93DB005B865C /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3A7E41B5D93DB005B865C /* RequestData.swift */; };
 		EBA3A7EA1B5D952E005B865C /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3A7E91B5D952E005B865C /* ResponseData.swift */; };
+		EBA8ABAB1B7606520058C71B /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8ABAA1B7606520058C71B /* ResultCell.swift */; };
 		EBB15E701B5EA3C60083D71C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB15E6F1B5EA3C60083D71C /* User.swift */; };
 		EBB15E741B5EA93C0083D71C /* ResponseProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB15E731B5EA93C0083D71C /* ResponseProcessor.swift */; };
 		EBB15E761B5EAC780083D71C /* IRequestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB15E751B5EAC780083D71C /* IRequestProcessor.swift */; };
@@ -134,6 +135,7 @@
 		EBA3A7E01B5D7321005B865C /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		EBA3A7E41B5D93DB005B865C /* RequestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
 		EBA3A7E91B5D952E005B865C /* ResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
+		EBA8ABAA1B7606520058C71B /* ResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		EBB15E6F1B5EA3C60083D71C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EBB15E731B5EA93C0083D71C /* ResponseProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseProcessor.swift; sourceTree = "<group>"; };
 		EBB15E751B5EAC780083D71C /* IRequestProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRequestProcessor.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				EBEA40CD1B68B3F5007F29C7 /* UserLoginCell.swift */,
 				EBEA40D11B68F489007F29C7 /* ForgetPasswordCell.swift */,
 				EBD95F971B6E4CD100118669 /* SignUpHereCell.swift */,
+				EBA8ABAA1B7606520058C71B /* ResultCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				EBA3A7E51B5D93DB005B865C /* RequestData.swift in Sources */,
 				EB8DB9411B62FC0C008C4031 /* GetRandomUserBridge.swift in Sources */,
 				EB43199F1B62C94E00E3E5B3 /* ImageRequestProcessor.swift in Sources */,
+				EBA8ABAB1B7606520058C71B /* ResultCell.swift in Sources */,
 				EB1DD89F1B64E9EF00979A5B /* UserRegistrationCell.swift in Sources */,
 				EBEA40D41B696E54007F29C7 /* UploadImageController.swift in Sources */,
 				EB50075E1B60380800DB482B /* UserResponseProcessor.swift in Sources */,

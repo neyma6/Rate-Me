@@ -15,6 +15,7 @@ class UploadImageController : DefaultViewController, SubmitProtocol, UIImagePick
     var currentUser: User!
     var cameraUI:UIImagePickerController = UIImagePickerController()
     var selectedImage: UIImage?
+    var delegate: CenterControllerCallBackProtocol?
     
     override func viewDidLoad() {
         cells.append(BlankCell(height: 20, imageNeeds: false))
@@ -30,7 +31,7 @@ class UploadImageController : DefaultViewController, SubmitProtocol, UIImagePick
         cameraUI.delegate = self
         cameraUI.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         cameraUI.mediaTypes = [kUTTypeImage]
-        cameraUI.allowsEditing = false
+        cameraUI.allowsEditing = true
         
         self.presentViewController(cameraUI, animated: true, completion: nil)
     }
@@ -38,7 +39,7 @@ class UploadImageController : DefaultViewController, SubmitProtocol, UIImagePick
     //UIImagePickerControllerDelegate
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         
-        selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage
         
         selectedImage = UIImageHelper.resizeImage(selectedImage!, scale: ImageViewCell.IMAGE_SIZE)
         
@@ -46,7 +47,7 @@ class UploadImageController : DefaultViewController, SubmitProtocol, UIImagePick
         
         var imageCell = cells[2] as! ImageViewCell
         imageCell.setNewImage(selectedImage!)
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
     }
     
     //UIImagePickerControllerDelegate
@@ -112,8 +113,13 @@ class UploadImageController : DefaultViewController, SubmitProtocol, UIImagePick
         if (status == "success") {
             if let url = response.url {
                 currentUser.imageUrl = url
-                var mainController = SlideOutController(centerViewController: ProfileController(currentUser: currentUser, profilePicture: selectedImage), currentUser: currentUser)
-                transformViewToOtherView(mainController)
+                
+                if (delegate == nil) {
+                    var mainController = SlideOutController(currentUser: currentUser, profilePicture: selectedImage)
+                    transformViewToOtherView(mainController)
+                } else {
+                    delegate!.centerControllerShouldBeChanged(0, user: currentUser, profilePicture: selectedImage)
+                }
             } else {
                 showAlertMessage("An error occured, please try again later!")
             }

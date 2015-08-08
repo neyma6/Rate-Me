@@ -45,7 +45,7 @@ class ImageViewCell : UITableViewCell {
         var width = image.size.width * scale
         var height = image.size.height * scale
         
-        //self.frame = CGRectMake(0, 0, self.frame.width, height)
+        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.width, height)
         
         userImageView.image = image
         userImageView.frame = CGRectMake(frame.width / 2 - width / 2, frame.height / 2 - height / 2, width, height)

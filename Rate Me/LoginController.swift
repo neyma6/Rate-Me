@@ -72,7 +72,7 @@ class LoginController : DefaultViewController, SubmitProtocol, UserLoginProtocol
                 transformViewToOtherView(imageUploadController)
             } else {
                 user.imageUrl = url
-                var mainController = SlideOutController(centerViewController: ProfileController(currentUser: user, profilePicture: nil), currentUser: user)
+                var mainController = SlideOutController(currentUser: user, profilePicture: nil)
                 transformViewToOtherView(mainController)
             }
       
