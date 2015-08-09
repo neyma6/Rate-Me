@@ -7,3 +7,25 @@
 //
 
 import Foundation
+
+protocol GetRandomUserProtocol {
+    func getRandomUserResponseReceived(response: ResponseData)
+    func getRandomUserErrorReceived(error: NSError?)
+}
+
+class GetRandomUserBridge : ConnectionManagerBridgeProtol {
+
+    var delegate: GetRandomUserProtocol!
+    
+    init(delegate: GetRandomUserProtocol) {
+        self.delegate = delegate
+    }
+    
+    func responseReceived(responseData: ResponseData) {
+        delegate.getRandomUserResponseReceived(responseData)
+    }
+    
+    func errorReceived(error: NSError?) {
+        delegate.getRandomUserErrorReceived(error)
+    }
+}

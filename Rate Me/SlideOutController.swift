@@ -181,6 +181,27 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol, SideNaviga
     }
     
     func changeController(controller: UIViewController) {
+        
+        /*controller.view.alpha = 0.0
+        self.view.addSubview(controller.view)
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+            UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                
+                self.centerViewController.view.alpha = 0.0
+                controller.view.alpha = 1.0
+                
+                
+                }, completion: {
+                    finished in
+                    if (finished) {
+                        self.centerViewController.removeFromParentViewController()
+                        self.centerViewController.view.removeFromSuperview()
+                        self.centerViewController = controller
+                        self.centerViewController.view.addGestureRecognizer(self.gestureRecognizer)
+                    }
+            })
+        })*/
+        
         self.centerViewController.removeFromParentViewController()
         self.centerViewController.view.removeFromSuperview()
         self.centerViewController = controller
@@ -194,7 +215,9 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol, SideNaviga
         case 0:
             controller = ProfileController(delegate: self, currentUser: currentUser, profilePicture: profilePicture)
         case 1:
-            controller = RegistrationController()
+            controller = RateOthersController()
+        case 2:
+            controller = EditProfileController()
         case 3:
             var uploadController = UploadImageController()
             uploadController.currentUser = currentUser

@@ -45,7 +45,6 @@ class ProfileController : DefaultViewController, ImageDownloadProtocol {
     //ImageDownloadProtocol
     func imageDownloadResponseReceived(response: ResponseData) {
         let status = response.status
-        println("image downloaded")
         if (status == "success") {
             if let imageObj = response.processable as? Image {
                 var imageCell = cells[2] as! ImageViewCell

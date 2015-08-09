@@ -27,6 +27,9 @@
 		EB8DB9411B62FC0C008C4031 /* GetRandomUserBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8DB9401B62FC0C008C4031 /* GetRandomUserBridge.swift */; };
 		EB8DB9431B62FC50008C4031 /* ImageUploadBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8DB9421B62FC50008C4031 /* ImageUploadBridge.swift */; };
 		EB8DB9451B62FC7D008C4031 /* ImageDownloadBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8DB9441B62FC7D008C4031 /* ImageDownloadBridge.swift */; };
+		EB8EFBBD1B7769AD00EE987E /* RateOthersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8EFBBC1B7769AD00EE987E /* RateOthersController.swift */; };
+		EB8EFBBF1B776ABF00EE987E /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8EFBBE1B776ABF00EE987E /* EditProfileController.swift */; };
+		EB8EFBC11B77F42300EE987E /* RateSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8EFBC01B77F42300EE987E /* RateSliderCell.swift */; };
 		EB8F344B1B6975FF00ADD647 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8F344A1B6975FF00ADD647 /* ImageViewCell.swift */; };
 		EB8F344D1B69771800ADD647 /* question_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = EB8F344C1B69771800ADD647 /* question_mark.png */; };
 		EB989BAE1B720B23003EE3A6 /* SlideOutMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB989BAD1B720B23003EE3A6 /* SlideOutMenuBar.swift */; };
@@ -113,6 +116,9 @@
 		EB8DB9401B62FC0C008C4031 /* GetRandomUserBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRandomUserBridge.swift; sourceTree = "<group>"; };
 		EB8DB9421B62FC50008C4031 /* ImageUploadBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploadBridge.swift; sourceTree = "<group>"; };
 		EB8DB9441B62FC7D008C4031 /* ImageDownloadBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadBridge.swift; sourceTree = "<group>"; };
+		EB8EFBBC1B7769AD00EE987E /* RateOthersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateOthersController.swift; sourceTree = "<group>"; };
+		EB8EFBBE1B776ABF00EE987E /* EditProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
+		EB8EFBC01B77F42300EE987E /* RateSliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateSliderCell.swift; sourceTree = "<group>"; };
 		EB8F344A1B6975FF00ADD647 /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		EB8F344C1B69771800ADD647 /* question_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = question_mark.png; path = Images/question_mark.png; sourceTree = "<group>"; };
 		EB989BAD1B720B23003EE3A6 /* SlideOutMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideOutMenuBar.swift; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 				EBEA40D11B68F489007F29C7 /* ForgetPasswordCell.swift */,
 				EBD95F971B6E4CD100118669 /* SignUpHereCell.swift */,
 				EBA8ABAA1B7606520058C71B /* ResultCell.swift */,
+				EB8EFBC01B77F42300EE987E /* RateSliderCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -276,6 +283,8 @@
 				EBEA40CF1B68B595007F29C7 /* LoginController.swift */,
 				EBEA40D31B696E54007F29C7 /* UploadImageController.swift */,
 				EB81D4F21B7379B20080FEC0 /* ProfileController.swift */,
+				EB8EFBBC1B7769AD00EE987E /* RateOthersController.swift */,
+				EB8EFBBE1B776ABF00EE987E /* EditProfileController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -565,6 +574,7 @@
 				EBB15E801B5EB7680083D71C /* UserRequestProcessor.swift in Sources */,
 				EB8DB93F1B62FBF9008C4031 /* RateUserBridge.swift in Sources */,
 				EBD95F9E1B6EB88700118669 /* SlideOutController.swift in Sources */,
+				EB8EFBBF1B776ABF00EE987E /* EditProfileController.swift in Sources */,
 				EBD95F981B6E4CD100118669 /* SignUpHereCell.swift in Sources */,
 				EB81D4F31B7379B20080FEC0 /* ProfileController.swift in Sources */,
 				EBA3A7E11B5D7321005B865C /* ConnectionManager.swift in Sources */,
@@ -572,6 +582,7 @@
 				EB989BB61B725A86003EE3A6 /* SideNavigationController.swift in Sources */,
 				EBB15E741B5EA93C0083D71C /* ResponseProcessor.swift in Sources */,
 				EBFB32401B67CC4700B87811 /* UIColorExtension.swift in Sources */,
+				EB8EFBBD1B7769AD00EE987E /* RateOthersController.swift in Sources */,
 				EB8DB93D1B62FBD3008C4031 /* UserLoginBridge.swift in Sources */,
 				EB8DB9371B62F90B008C4031 /* ImageEndpointBridge.swift in Sources */,
 				EBC404791B66B88F0015B175 /* SubmitCell.swift in Sources */,
@@ -579,6 +590,7 @@
 				EBEA40D21B68F489007F29C7 /* ForgetPasswordCell.swift in Sources */,
 				EBA3A7EA1B5D952E005B865C /* ResponseData.swift in Sources */,
 				EB4A2C221B63B21B0076205E /* NoRequestProcessor.swift in Sources */,
+				EB8EFBC11B77F42300EE987E /* RateSliderCell.swift in Sources */,
 				EB8F344B1B6975FF00ADD647 /* ImageViewCell.swift in Sources */,
 				EBA3A7C01B5D7280005B865C /* AppDelegate.swift in Sources */,
 				EB1DD89C1B64E74E00979A5B /* DefaultViewController.swift in Sources */,
