@@ -70,6 +70,14 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol, SideNaviga
             startTouchPoint = gestureRecognizer.locationInView(self.centerViewController.view)
             diff = 0
             
+            var uiView: UIView = self.view.hitTest(startTouchPoint!, withEvent: nil)!
+            
+            print(uiView)
+            
+            if (uiView.isKindOfClass(UITableView)) {
+                print("cell view")
+            }
+            
         case UIGestureRecognizerState.Changed:
             var touchLocation = gestureRecognizer.locationInView(self.centerViewController.view)
 

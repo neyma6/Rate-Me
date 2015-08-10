@@ -8,13 +8,16 @@
 
 import UIKit
 
-class RateOthersController: DefaultViewController, GetRandomUserProtocol, ImageDownloadProtocol {
+class RateOthersController: DefaultViewController, GetRandomUserProtocol, ImageDownloadProtocol, SubmitProtocol, RateUserProtocol {
  
+    var user: User?
+    
     override func viewDidLoad() {
         self.cells.append(BlankCell(height: 0, imageNeeds: false))
         self.cells.append(HeaderCell(title: ""))
         self.cells.append(ImageViewCell())
         self.cells.append(RateSliderCell())
+        self.cells.append(SubmitCell(delegate: self, submitButtonLabel: "Rate!", cancelButtonLabel: nil))
         super.viewDidLoad()
 
         requestRandomUser()
@@ -33,14 +36,14 @@ class RateOthersController: DefaultViewController, GetRandomUserProtocol, ImageD
         let status = response.status!
         
         if (status == "success") {
-            var user = response.processable as! User
+            user = response.processable as? User
             
             var headerCell = self.cells[1] as! HeaderCell
-            headerCell.headerTitle.text = "Rate \(user.name!)"
+            headerCell.headerTitle.text = "Rate \(user!.name!)"
             
             if (response.url != nil) {
-                user.imageUrl = response.url
-                downloadProfilePicture(user)
+                user!.imageUrl = response.url
+                downloadProfilePicture(user!)
             }
         } else {
             showAlertMessage("An error occured, please try again later!")
@@ -77,6 +80,36 @@ class RateOthersController: DefaultViewController, GetRandomUserProtocol, ImageD
             var connectionManager = ConnectionManager(delegate: ImageDownloadBridge(delegate: self), requestProcessor: NoRequestProcessor(), responseProcessor: DownloadImageResponseProcessor())
             
             connectionManager.asynchonousImageDownloadRequest(request)
+    }
+    
+    //SubmitProtocol
+    func submitButtonPressed(sender: UIButton) {
+        if (user != nil) {
+            var imageCell = cells[3] as! RateSliderCell
+            user!.rateValue = Int(imageCell.slider.value)
+            var request = RequestData(domain: HttpConfig.ENDPOINT, endpoint: "/rate/set", method: "GET", processable: user!)
+            
+            var connectionManager = ConnectionManager(delegate: RateUserBridge(delegate: self), requestProcessor: UserRequestProcessor(), responseProcessor: UserResponseProcessor())
+            connectionManager.synchonousRequest(request)
+        }
+    }
+    
+    //SubmitProtocol
+    func cancelButtonPressed(sender: UIButton) {
+    
+    }
+    
+    //RateUserProtocol
+    func rateUserResponseReceived(responseData: ResponseData) {
+        var imageCell = cells[3] as! RateSliderCell
+        imageCell.slider.value = 5.5
+        imageCell.sliderLabel.text = "5"
+        requestRandomUser()
+    }
+    
+    //RateUserProtocol
+    func rateUserErrorReceived(error: NSError?) {
+    
     }
 
 }

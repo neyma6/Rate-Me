@@ -7,3 +7,26 @@
 //
 
 import Foundation
+import UIKit
+
+protocol RateUserProtocol {
+    func rateUserResponseReceived(responseData: ResponseData)
+    func rateUserErrorReceived(error: NSError?)
+}
+
+class RateUserBridge : ConnectionManagerBridgeProtol {
+
+    var delegate: RateUserProtocol!
+    
+    init(delegate: RateUserProtocol) {
+        self.delegate = delegate
+    }
+    
+    func responseReceived(responseData: ResponseData) {
+        delegate.rateUserResponseReceived(responseData)
+    }
+    
+    func errorReceived(error: NSError?) {
+        delegate.rateUserErrorReceived(error)
+    }
+}
