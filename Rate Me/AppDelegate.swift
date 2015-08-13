@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //var slideOut = SlideOutController(centerViewController: LoginController())
         var user = User(userId: "t@t.com")
         user.name = "John Snow"
-        user.password = "t"
+        user.password = "1"
         user.facebookUser = false
         user.numberOfRates = 124
         user.rateValue = 450

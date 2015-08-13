@@ -35,11 +35,11 @@ class UserRequestProcessor : IRequestProcessor {
         dictionary["id"] = user.id
         
         if (user.name != nil) {
-            dictionary["name"] = user.name
+            dictionary["name"] = user.name!.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
         }
         
         if (user.password != nil) {
-            dictionary["password"] = user.password
+            dictionary["password"] = user.password!.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
         }
         
         if (user.rateValue != nil) {

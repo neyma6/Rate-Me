@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB1A85D11B7B4605009EFAA2 /* LoadingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1A85D01B7B4605009EFAA2 /* LoadingController.swift */; };
 		EB1DD89A1B64DB5500979A5B /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1DD8991B64DB5500979A5B /* RegistrationController.swift */; };
 		EB1DD89C1B64E74E00979A5B /* DefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1DD89B1B64E74E00979A5B /* DefaultViewController.swift */; };
 		EB1DD89F1B64E9EF00979A5B /* UserRegistrationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1DD89E1B64E9EF00979A5B /* UserRegistrationCell.swift */; };
@@ -96,6 +97,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB1A85D01B7B4605009EFAA2 /* LoadingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingController.swift; sourceTree = "<group>"; };
 		EB1DD8991B64DB5500979A5B /* RegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		EB1DD89B1B64E74E00979A5B /* DefaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultViewController.swift; sourceTree = "<group>"; };
 		EB1DD89E1B64E9EF00979A5B /* UserRegistrationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegistrationCell.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				EB81D4F21B7379B20080FEC0 /* ProfileController.swift */,
 				EB8EFBBC1B7769AD00EE987E /* RateOthersController.swift */,
 				EB8EFBBE1B776ABF00EE987E /* EditProfileController.swift */,
+				EB1A85D01B7B4605009EFAA2 /* LoadingController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				EBB15E741B5EA93C0083D71C /* ResponseProcessor.swift in Sources */,
 				EBFB32401B67CC4700B87811 /* UIColorExtension.swift in Sources */,
 				EB8EFBBD1B7769AD00EE987E /* RateOthersController.swift in Sources */,
+				EB1A85D11B7B4605009EFAA2 /* LoadingController.swift in Sources */,
 				EB8DB93D1B62FBD3008C4031 /* UserLoginBridge.swift in Sources */,
 				EB8DB9371B62F90B008C4031 /* ImageEndpointBridge.swift in Sources */,
 				EBC404791B66B88F0015B175 /* SubmitCell.swift in Sources */,

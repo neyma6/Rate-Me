@@ -11,6 +11,19 @@ import UIKit
 class RateOthersController: DefaultViewController, GetRandomUserProtocol, ImageDownloadProtocol, SubmitProtocol, RateUserProtocol {
  
     var user: User?
+    var currentUser: User!
+    var delegate: SlideOutControllerProtocol!
+    
+    init(delegate: SlideOutControllerProtocol, currentUser: User) {
+        super.init(nibName: nil, bundle: nil)
+        self.delegate = delegate
+        self.currentUser = currentUser
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     
     override func viewDidLoad() {
         self.cells.append(BlankCell(height: 0, imageNeeds: false))
@@ -24,7 +37,8 @@ class RateOthersController: DefaultViewController, GetRandomUserProtocol, ImageD
     }
     
     func requestRandomUser() {
-        var request = RequestData(domain: HttpConfig.ENDPOINT, endpoint: "/rate/get", method: "GET")
+        delegate.showIndicator()
+        var request = RequestData(domain: HttpConfig.ENDPOINT, endpoint: "rate/get", method: "GET", processable: currentUser)
         
         var connectionManager = ConnectionManager(delegate: GetRandomUserBridge(delegate: self), requestProcessor: UserRequestProcessor(), responseProcessor: UserResponseProcessor())
         
@@ -46,6 +60,7 @@ class RateOthersController: DefaultViewController, GetRandomUserProtocol, ImageD
                 downloadProfilePicture(user!)
             }
         } else {
+            delegate.hideIndicator()
             showAlertMessage("An error occured, please try again later!")
         }
     }
@@ -53,6 +68,7 @@ class RateOthersController: DefaultViewController, GetRandomUserProtocol, ImageD
     //GetRandomUserProtocol
     func getRandomUserErrorReceived(error: NSError?) {
         println("error")
+        
     }
     
     //ImageDownloadProtocol
@@ -63,7 +79,7 @@ class RateOthersController: DefaultViewController, GetRandomUserProtocol, ImageD
                 var imageCell = cells[2] as! ImageViewCell
                 imageCell.setNewImage(imageObj.image!)
                 
-                
+                delegate.hideIndicator()
                 self.tableView.reloadData()
             }
         }

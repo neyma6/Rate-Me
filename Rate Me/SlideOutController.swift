@@ -9,17 +9,20 @@
 import Foundation
 import UIKit
 
-protocol CenterControllerCallBackProtocol {
+protocol SlideOutControllerProtocol {
     func centerControllerShouldBeChanged(menuIndex: Int, user: User, profilePicture: UIImage?)
+    func showIndicator()
+    func hideIndicator()
 }
 
-class SlideOutController : UIViewController, SlideOutMenuBarProtocol, SideNavigationControllerProtocol, ImageDownloadedProtocol, CenterControllerCallBackProtocol {
+class SlideOutController : UIViewController, SlideOutMenuBarProtocol, SideNavigationControllerProtocol, ImageDownloadedProtocol, SlideOutControllerProtocol {
 
     static let MENU_BAR_HEIGHT: CGFloat = 50
     static let THRESHOLD: CGFloat = 0.4
     
     var centerViewController: UIViewController!
     var leftSlideController: UIViewController!
+    var loadingController: LoadingController!
     var slideOutMenuBar: SlideOutMenuBar!
     var gestureRecognizer: UIPanGestureRecognizer!
     var chosenMenuIndex = 0
@@ -38,6 +41,7 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol, SideNaviga
         self.threshold = self.view.frame.width * SlideOutController.THRESHOLD
         self.currentUser = currentUser
         self.profilePicture = profilePicture
+        self.loadingController = LoadingController()
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -61,6 +65,7 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol, SideNaviga
         
         gestureRecognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
         self.centerViewController.view.addGestureRecognizer(gestureRecognizer)
+        
     }
     
     func handlePan(gestureRecognizer: UIPanGestureRecognizer) {
@@ -156,7 +161,7 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol, SideNaviga
         self.profilePicture = image
     }
     
-    //CenterControllerCallBackProtocol
+    //SlideOutControllerProtocol
     func centerControllerShouldBeChanged(menuIndex: Int, user: User, profilePicture: UIImage?) {
         currentUser = user
         if (profilePicture != nil) {
@@ -165,6 +170,34 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol, SideNaviga
         
         var controller = selectControllerTypeFromMenuIndex(menuIndex)
         changeController(controller)
+    }
+    
+    //SlideOutControllerProtocol
+    func showIndicator() {
+        self.view.addSubview(loadingController.view)
+        //loadingController.showIndicator()
+        
+        println("show")
+    }
+    
+    //SlideOutControllerProtocol
+    func hideIndicator() {
+        
+        self.loadingController.view.removeFromSuperview()
+        
+        /*println("hide")
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                    self.loadingController.hideIndicator()
+                }, completion: {
+                    finished in
+                    if (finished) {
+                        println("hide2")
+                        self.loadingController.view.removeFromSuperview()
+                    }
+            })
+        })*/
+        
     }
     
     func animateMovement(endX: CGFloat) {
@@ -223,7 +256,7 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol, SideNaviga
         case 0:
             controller = ProfileController(delegate: self, currentUser: currentUser, profilePicture: profilePicture)
         case 1:
-            controller = RateOthersController()
+            controller = RateOthersController(delegate: self, currentUser: currentUser)
         case 2:
             controller = EditProfileController()
         case 3:
@@ -238,4 +271,6 @@ class SlideOutController : UIViewController, SlideOutMenuBarProtocol, SideNaviga
         
         return controller!
     }
+    
+    
 }

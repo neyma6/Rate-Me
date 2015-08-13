@@ -15,7 +15,7 @@ class UploadImageController : DefaultViewController, SubmitProtocol, UIImagePick
     var currentUser: User!
     var cameraUI:UIImagePickerController = UIImagePickerController()
     var selectedImage: UIImage?
-    var delegate: CenterControllerCallBackProtocol?
+    var delegate: SlideOutControllerProtocol?
     
     override func viewDidLoad() {
         cells.append(BlankCell(height: 20, imageNeeds: false))
@@ -64,6 +64,7 @@ class UploadImageController : DefaultViewController, SubmitProtocol, UIImagePick
     func cancelButtonPressed(sender: UIButton) {
         if (selectedImage != nil)
         {
+            delegate?.showIndicator()
             var request = RequestData(domain: HttpConfig.ENDPOINT, endpoint: "blob/uploadUrl", method: "GET")
             
             var connectionManager = ConnectionManager(delegate: ImageEndpointBridge(delegate: self), requestProcessor: UserRequestProcessor(), responseProcessor: UserResponseProcessor())
@@ -93,23 +94,26 @@ class UploadImageController : DefaultViewController, SubmitProtocol, UIImagePick
                 connectionManager.synchonousRequest(request)
                 
             } else {
+                delegate?.hideIndicator()
                 showAlertMessage("An error occured, please try again later!")
             }
             
         } else {
+            delegate?.hideIndicator()
             showAlertMessage("An error occured, please try again later!")
         }
     }
     
     //ImageEndpointProtocol
     func imageUploadUrlErrorReceived(error: NSError?) {
+        delegate?.hideIndicator()
         showAlertMessage("An error occured, please try again later!")
     }
     
     //ImageUploadProtocol
     func imageUploadResponseReceived(response: ResponseData) {
         let status = response.status
-        
+        delegate?.hideIndicator()
         if (status == "success") {
             if let url = response.url {
                 currentUser.imageUrl = url
@@ -130,6 +134,7 @@ class UploadImageController : DefaultViewController, SubmitProtocol, UIImagePick
     
     //ImageUploadProtocol
     func imageUploadErrorReceived(error: NSError?) {
+        delegate?.hideIndicator()
         println("error")
     }
 
